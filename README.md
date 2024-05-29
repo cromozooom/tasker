@@ -2,20 +2,25 @@
 
 ## What for?
 
-**Convert markdown to tasks**
+**Convert markdown to tasks.**
 
-A task it will be created from every list item with priority set in square
-brackets like below:
+A task will be created from every list item with a priority set in square
+brackets, like below:
 
-- [1] Task priority 1
-- [0] Task priority 0
+```
+[1] Task priority 1
+[0] Task priority 0
+```
 
-Use live Server in vscode to see the task
+Use Live Server in VSCode to see the tasks.
 
-## Come soon:
+## Coming soon:
 
-1. add to local storage
-1. edit status
-1. add notes
+- Add to local storage
+- Edit status
+- Add notes
 
-thanks AlpineJS and markdown-it
+## Thanks
+
+- AlpineJS and
+- markdown-it.

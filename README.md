@@ -14,6 +14,8 @@ brackets, like below:
 
 Use Live Server in VSCode to see the tasks.
 
+The example is from Bootstrap 5.3 Update
+
 ## Coming soon:
 
 - Add to local storage

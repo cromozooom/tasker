@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Viewer</title>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"
+      defer
+    ></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      .task {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+      }
+      .priority-1 {
+        border-color: red;
+      }
+      .priority-2 {
+        border-color: orange;
+      }
+      .priority-3 {
+        border-color: yellow;
+      }
+      .priority-4 {
+        border-color: green;
+      }
+      .priority-5 {
+        border-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div x-data="taskViewer()">
+      <template x-if="error">
+        <p x-text="error" style="color: red"></p>
+      </template>
+      <template x-if="!error && !loaded">
+        <p>Loading tasks...</p>
+      </template>
+      <template x-if="loaded">
+        <template
+          x-for="(section, sectionIndex) in sections"
+          :key="sectionIndex"
+        >
+          <div>
+            <h2 x-text="section.title"></h2>
+            <div x-html="renderMarkdown(section.content)"></div>
+            <template
+              x-for="(task, taskIndex) in section.tasks"
+              :key="sectionIndex + '-' + taskIndex"
+            >
+              <div :class="'task priority-' + task.priority">
+                <div x-html="renderMarkdown(task.content)"></div>
+                <p>
+                  <strong>Priority:</strong>
+                  <span x-text="task.priority"></span>
+                </p>
+                <p>
+                  <strong>Status:</strong> <span x-text="task.status"></span>
+                </p>
+                <p><strong>Notes:</strong> <span x-text="task.notes"></span></p>
+              </div>
+            </template>
+          </div>
+        </template>
+      </template>
+    </div>
+
+    <script>
+      function taskViewer() {
+        return {
+          sections: [],
+          loaded: false,
+          error: "",
+          init() {
+            console.log("Fetching tasks...");
+            fetch("tasks.json")
+              .then((response) => {
+                if (!response.ok) {
+                  throw new Error(
+                    "Network response was not ok: " + response.statusText
+                  );
+                }
+                return response.json();
+              })
+              .then((data) => {
+                console.log("Tasks loaded:", data);
+                this.sections = data;
+                this.loaded = true;
+              })
+              .catch((error) => {
+                console.error("Failed to load tasks:", error);
+                this.error = "Failed to load tasks: " + error.message;
+              });
+          },
+          renderMarkdown(content) {
+            return marked.parse(content);
+          },
+        };
+      }
+    </script>
+  </body>
+</html>

@@ -1,12 +1,12 @@
 {
   "name": "tasker",
   "version": "1.0.0",
-  "description": "",
+  "description": "Convert markdown to tasks",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "solopx.com",
   "license": "ISC",
   "dependencies": {
     "markdown-it": "^14.1.0"

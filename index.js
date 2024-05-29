@@ -56,7 +56,7 @@ function convertMarkdownToTasks(markdownText) {
       currentSection.tasks.push({
         content: content,
         priority: priority,
-        status: "",
+        status: "Not Started",
         notes: "empty",
       });
     } else if (insideListItem && token.type === "inline") {

@@ -8,10 +8,8 @@
       defer
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
     ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"
-      defer
-    ></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
       body {
         font-family: Arial, sans-serif;
@@ -48,32 +46,47 @@
       <template x-if="!error && !loaded">
         <p>Loading tasks...</p>
       </template>
+
       <template x-if="loaded">
-        <template
-          x-for="(section, sectionIndex) in sections"
-          :key="sectionIndex"
-        >
-          <div>
-            <h2 x-text="section.title"></h2>
-            <div x-html="renderMarkdown(section.content)"></div>
-            <template
-              x-for="(task, taskIndex) in section.tasks"
-              :key="sectionIndex + '-' + taskIndex"
-            >
-              <div :class="'task priority-' + task.priority">
-                <div x-html="renderMarkdown(task.content)"></div>
-                <p>
-                  <strong>Priority:</strong>
-                  <span x-text="task.priority"></span>
-                </p>
-                <p>
-                  <strong>Status:</strong> <span x-text="task.status"></span>
-                </p>
-                <p><strong>Notes:</strong> <span x-text="task.notes"></span></p>
-              </div>
-            </template>
-          </div>
-        </template>
+        <div>
+          <button @click="downloadTasks()">Download Tasks</button>
+          <template
+            x-for="(section, sectionIndex) in sections"
+            :key="sectionIndex"
+          >
+            <div>
+              <h2 x-text="section.title"></h2>
+              <div x-html="renderMarkdown(section.content)"></div>
+              <template
+                x-for="(task, taskIndex) in section.tasks"
+                :key="sectionIndex + '-' + taskIndex"
+              >
+                <div :class="'task priority-' + task.priority">
+                  <div x-html="renderMarkdown(task.content)"></div>
+                  <p>
+                    <strong>Priority:</strong>
+                    <span x-text="task.priority"></span>
+                  </p>
+                  <label
+                    ><strong>Status:</strong>
+                    <select
+                      x-model="task.status"
+                      @change="saveToLocalStorage()"
+                    >
+                      <option value="">Select status</option>
+                      <option value="Not Started">Not Started</option>
+                      <option value="In Progress">In Progress</option>
+                      <option value="Completed">Completed</option>
+                    </select>
+                  </label>
+                  <p>
+                    <strong>Notes:</strong> <span x-text="task.notes"></span>
+                  </p>
+                </div>
+              </template>
+            </div>
+          </template>
+        </div>
       </template>
     </div>
 
@@ -85,27 +98,50 @@
           error: "",
           init() {
             console.log("Fetching tasks...");
-            fetch("tasks.json")
-              .then((response) => {
-                if (!response.ok) {
-                  throw new Error(
-                    "Network response was not ok: " + response.statusText
-                  );
-                }
-                return response.json();
-              })
-              .then((data) => {
-                console.log("Tasks loaded:", data);
-                this.sections = data;
-                this.loaded = true;
-              })
-              .catch((error) => {
-                console.error("Failed to load tasks:", error);
-                this.error = "Failed to load tasks: " + error.message;
-              });
+            const storedData = localStorage.getItem("tasks");
+            if (storedData) {
+              this.sections = JSON.parse(storedData);
+              this.loaded = true;
+            } else {
+              fetch("tasks.json")
+                .then((response) => {
+                  if (!response.ok) {
+                    throw new Error(
+                      "Network response was not ok: " + response.statusText
+                    );
+                  }
+                  return response.json();
+                })
+                .then((data) => {
+                  console.log("Tasks loaded:", data);
+                  this.sections = data;
+                  this.saveToLocalStorage();
+                  this.loaded = true;
+                })
+                .catch((error) => {
+                  console.error("Failed to load tasks:", error);
+                  this.error = "Failed to load tasks: " + error.message;
+                });
+            }
+          },
+          saveToLocalStorage() {
+            localStorage.setItem("tasks", JSON.stringify(this.sections));
           },
           renderMarkdown(content) {
             return marked.parse(content);
+          },
+
+          downloadTasks() {
+            const dataStr = JSON.stringify(this.sections, null, 2);
+            const blob = new Blob([dataStr], { type: "application/json" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = "tasks.json";
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
           },
         };
       }

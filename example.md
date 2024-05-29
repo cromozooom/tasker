@@ -31,7 +31,7 @@ changes listed below.
 
 ### CSS variables
 
-- [1] Removed several duplicate and unused root CSS variables.
+- [1] **Removed several** duplicate and unused root CSS variables.
 
 ### Color modes
 

@@ -18,9 +18,11 @@ The example is from Bootstrap 5.3 Update
 
 ## Coming soon:
 
-- Add to local storage
-- Edit status
+- ✅ Add to local storage
+- ✅ Export from local storage
+- ✅ Edit status
 - Add notes
+- Statistics
 
 ## Thanks
 

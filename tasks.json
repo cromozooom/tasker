@@ -16,7 +16,7 @@
       {
         "content": "[Colored links]({{< docsref \"/helpers/colored-links\" >}}) once again have\n`!important` so they work better with our newly added link utilities.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       }
     ]
@@ -28,7 +28,7 @@
       {
         "content": "Added new `.d-inline-grid` [display\nutility]({{< docsref \"/utilities/display\" >}}).",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       }
     ]
@@ -40,12 +40,12 @@
   },
   {
     "title": "CSS variables",
-    "content": "[1] Removed several duplicate and unused root CSS variables.",
+    "content": "[1] **Removed several** duplicate and unused root CSS variables.",
     "tasks": [
       {
-        "content": "Removed several duplicate and unused root CSS variables.",
+        "content": "**Removed several** duplicate and unused root CSS variables.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       }
     ]
@@ -57,55 +57,55 @@
       {
         "content": "Dark mode colors are now derived from our theme colors (e.g., `$primary`)\nin Sass, rather than color specific tints or shades (e.g., `$blue-300`). This\nallows for a more automated dark mode when customizing the default theme\ncolors.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Added Sass maps for generating theme colors for dark mode text, subtle\nbackground, and subtle border.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "[Snippet examples]({{< docsref \"/examples#snippets\" >}}) are now ready for\ndark mode with updated markup and reduced custom styles.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Added `color-scheme: dark` to dark mode CSS to change OS level controls\nlike scrollbars",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Form validation `border-color` and text `color` states now respond to dark\nmode, thanks to new Sass and CSS variables.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Dropped recently added form control background CSS variables and\nreassigned the Sass variables to use CSS variables instead. This simplifies\nthe styling across color modes and avoids an issue where form controls in dark\nmode wouldn't update properly.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Our `box-shadow`s will once again always stay dark instead of inverting to\nwhite when in dark mode.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Improved HTML and JavaScript for our color mode toggle script. The\nselector for changing the active SVG has been improved, and the markup made\nmore accessible with ARIA attributes.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Improved docs code syntax colors and more across light and dark modes.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       }
     ]
@@ -117,7 +117,7 @@
       {
         "content": "We no longer set a color for `$headings-color-dark` or\n`--bs-heading-color` for dark mode. To avoid several problems of headings\nwithin components appearing the wrong color, we've set the Sass variable to\n`null` and added a `null` check like we use on the default light mode.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       }
     ]
@@ -129,19 +129,19 @@
       {
         "content": "Cards now have a `color` set on them to improve rendering across color\nmodes.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Added new `.nav-underline` variant for our navigation with a simpler\nbottom border under the active nav link. [See the docs for an\nexample.]({{< docsref \"/components/navs-tabs#underline\" >}})",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Navs now have new `:focus-visible` styles that better match our custom\nbutton focus styles.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       }
     ]
@@ -153,13 +153,13 @@
       {
         "content": "Added new `.icon-link` helper to quickly place and align Bootstrap Icons\nalongside a textual link. Icon links support our new link utilities, too.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Added new focus ring helper for removing the default `outline` and setting\na custom `box-shadow` focus ring.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       }
     ]
@@ -171,37 +171,37 @@
       {
         "content": "Renamed Sass and CSS variables `${color}-text` to `${color}-text-emphasis`\nto match their associated utilities.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Added new `.link-body-emphasis` helper alongside our [colored\nlinks]({{< docsref \"/helpers/colored-links\" >}}). This creates a colored link\nusing our color mode responsive emphasis color.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Added new link utilities for link color opacity, underline offset,\nunderline color, and underline opacity. [Explore the new links\nutilities.]({{< docsref \"/utilities/link\" >}})",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "CSS variable based `border-width` utilities have been reverted to set\ntheir property directly (as was done prior to v5.2.0). This avoids inheritance\nissues across nested elements, including tables.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Added new `.border-black` utility to match our `.text-black` and\n`.bg-black` utilities.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "<span class=\"badge text-warning-emphasis bg-warning-subtle\">Deprecated</span>\nDeprecated the `.text-muted` utility and `$text-muted` Sass variable. It's\nbeen replaced by `.text-body-secondary` and `$body-secondary-color`.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       }
     ]
@@ -213,19 +213,19 @@
       {
         "content": "Examples are now displayed with the appropriate light or dark color mode\nas dictated by the setting in our docs. Each example has an individual color\nmode picker.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Improved included JavaScript for live Toast demo.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Added `twbs/examples` repo contents to the top of the Examples page.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       }
     ]
@@ -237,13 +237,13 @@
       {
         "content": "Added SCSS testing via True to help test our utilities API and other\ncustomizations.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Replaced instances of our bootstrap-npm-starter project with the newer and\nmore complete [twbs/examples repo](https://github.com/twbs/examples).",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       }
     ]
@@ -260,25 +260,25 @@
       {
         "content": "**Global support for light (default) and dark color modes.** Set color\nmode globally on the `:root` element, on groups of elements and components\nwith a wrapper class, or directly on components, with\n`data-bs-theme=\"light|dark\"`. Also included is a new `color-mode()` mixin that\ncan output a ruleset with the `data-bs-theme` selector or a media query,\ndepending on your preference.<span class=\"badge text-warning-emphasis bg-warning-subtle\">Deprecated</span>\nColor modes replace dark variants for components, so `.btn-close-white`,\n`.carousel-dark`, `.dropdown-menu-dark`, and `.navbar-dark` are deprecated.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "**New extended color system.** We've added new theme colors (but not in\n`$theme-colors`) for a more nuanced, system-wide color palette with new\nsecondary, tertiary, and emphasis colors for `color` and `background-color`.\nThese new colors are available as Sass variables, CSS variables, and\nutilities.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "We've also expanded our theme color Sass variables, CSS variables, and\nutilities to include text emphasis, subtle background colors, and subtle\nborder colors. These are available as Sass variables, CSS variables, and\nutilities.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Adds new `_variables-dark.scss` stylesheet to house dark-mode specific\noverrides. This stylesheet should be imported immediately after the existing\n`_variables.scss` file in your import stack.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       }
     ]
@@ -290,43 +290,43 @@
       {
         "content": "Restores CSS variables for breakpoints, though we don't use them in our\nmedia queries as they're not supported. However, these can be useful in\nJS-specific contexts.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Per the color modes update, we've added new utilities for new Sass CSS\nvariables `secondary` and `tertiary` text and background colors, plus\n`{color}-bg-subtle`, `{color}-border-subtle`, and `{color}-text-emphasis` for\nour theme colors. These new colors are available through Sass and CSS\nvariables (but not our color maps) with the express goal of making it easier\nto customize across multiple colors modes like light and dark.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Adds additional variables for alerts, `.btn-close`, and `.offcanvas`.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "The `--bs-heading-color` variable is back with an update and dark mode\nsupport. First, we now check for a `null` value on the associated Sass\nvariable, `$headings-color`, before trying to output the CSS variable, so by\ndefault it's not present in our compiled CSS. Second, we use the CSS variable\nwith a fallback value, `inherit`, allowing the original behavior to persist,\nbut also allowing for overrides.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Converts links to use CSS variables for styling `color`, but not\n`text-decoration`. Colors are now set with `--bs-link-color-rgb` and\n`--bs-link-opacity` as `rgba()` color, allowing you to customize the\ntranslucency with ease. The `a:hover` pseudo-class now overrides\n`--bs-link-color-rgb` instead of explicitly setting the `color` property.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "`--bs-border-width` is now being used in more components for greater\ncontrol over default global styling.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Adds new root CSS variables for our `box-shadow`s, including\n`--bs-box-shadow`, `--bs-box-shadow-sm`, `--bs-box-shadow-lg`, and\n`--bs-box-shadow-inset`.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       }
     ]
@@ -343,13 +343,13 @@
       {
         "content": "Alert variants are now styled via CSS variables.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "<span class=\"badge text-warning-emphasis bg-warning-subtle\">Deprecated</span>\nThe `alert-variant()` mixin is now deprecated. We now [use a Sass\nloop]({{< docsref \"/components/alerts#sass-loops\" >}}) directly to modify the\ncomponent's default CSS variables for each variant.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       }
     ]
@@ -361,13 +361,13 @@
       {
         "content": "List group item variants are now styled via CSS variables.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "<span class=\"badge text-warning-emphasis bg-warning-subtle\">Deprecated</span>\nThe `list-group-item-variant()` mixin is now deprecated. We now [use a Sass\nloop]({{< docsref \"/components/list-group#sass-loops\" >}}) directly to modify\nthe component's default CSS variables for each variant.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       }
     ]
@@ -379,7 +379,7 @@
       {
         "content": "<span class=\"badge text-warning-emphasis bg-warning-subtle\">Deprecated</span>\nThe `.dropdown-menu-dark` class has been deprecated and replaced with\n`data-bs-theme=\"dark\"` on the dropdown or any parent element. [See the docs\nfor an example.]({{< docsref \"/components/dropdowns#dark-dropdowns\" >}})",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       }
     ]
@@ -391,7 +391,7 @@
       {
         "content": "<span class=\"badge text-warning-emphasis bg-warning-subtle\">Deprecated</span>\nThe `.btn-close-white` class has been deprecated and replaced with\n`data-bs-theme=\"dark\"` on the close button or any parent element. [See the\ndocs for an example.]({{< docsref \"/components/close-button#dark-variant\" >}})",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       }
     ]
@@ -403,7 +403,7 @@
       {
         "content": "<span class=\"badge text-warning-emphasis bg-warning-subtle\">Deprecated</span>\nThe `.navbar-dark` class has been deprecated and replaced with\n`data-bs-theme=\"dark\"` on the navbar or any parent element. [See the docs for\nupdated examples.]({{< docsref \"/components/navbar#color-schemes\" >}})",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       }
     ]
@@ -420,25 +420,25 @@
       {
         "content": "`.form-control` is now styled with CSS variables to support color modes.\nThis includes the addition of two new root CSS variables for the default and\ndisabled form control backgrounds.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "`.form-check` and `.form-switch` components are now built with CSS\nvariables for setting the `background-image`. The usage here differs from\nother components in that the various focus, active, etc states for each\ncomponent aren't set on the base class. Instead, the states override one\nvariable (e.g., `--bs-form-switch-bg`).",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Floating form labels now have a `background-color` to fix support for\n`<textarea>` elements. Additional changes have been made to also support\ndisabled states and more.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Fixed display of date and time inputs in WebKit based browsers.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       }
     ]
@@ -450,31 +450,31 @@
       {
         "content": "<span class=\"badge text-warning-emphasis bg-warning-subtle\">Deprecated</span>\n`.text-muted` will be replaced by `.text-body-secondary` in v6.With the addition of the expanded theme colors and variables, the\n`.text-muted` variables and utility have been deprecated with v5.3.0. Its\ndefault value has also been reassigned to the new `--bs-secondary-color` CSS\nvariable to better support color modes. It will be removed in v6.0.0.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Adds new `.overflow-x`, `.overflow-y`, and several `.object-fit-*`\nutilities. _The object-fit property is used to specify how an `<img>` or\n`<video>` should be resized to fit its container, giving us a responsive\nalternative to using `background-image` for a resizable fill/fit image._",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Adds new `.fw-medium` utility.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Added new [`.z-*` utilities]({{< docsref \"/utilities/z-index\" >}}) for\n`z-index`.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "[Box shadow utilities]({{< docsref \"/utilities/shadows\" >}}) (and Sass\nvariables) have been updated for dark mode. They now use `--bs-body-color-rgb`\nto generate the `rgba()` color values, allowing them to easily adapt to color\nmodes based on the specified foreground color.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       }
     ]
@@ -501,49 +501,49 @@
       {
         "content": "`$theme-colors-rgb`",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "`$utilities-colors`",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "`$utilities-text`",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "`$utilities-text-colors`",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "`$utilities-bg`",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "`$utilities-bg-colors`",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "`$negative-spacers`",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "`$gutters`",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       }
     ]
@@ -555,13 +555,13 @@
       {
         "content": "Expanded [`font-weight`\nutilities]({{< docsref \"/utilities/text#font-weight-and-italics\" >}}) to\ninclude `.fw-semibold` for semibold fonts.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Expanded [`border-radius`\nutilities]({{< docsref \"/utilities/borders#sizes\" >}}) to include two new\nsizes, `.rounded-4` and `.rounded-5`, for more options.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       }
     ]
@@ -573,49 +573,49 @@
       {
         "content": "**Introduced new `$enable-container-classes` option. —** Now when opting\ninto the experimental CSS Grid layout, `.container-*` classes will still be\ncompiled, unless this option is set to `false`. Containers also now keep their\ngutter values.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "**Offcanvas component now has [responsive\nvariations]({{< docsref \"/components/offcanvas#responsive\" >}}).** The\noriginal `.offcanvas` class remains unchanged—it hides content across all\nviewports. To make it responsive, change that `.offcanvas` class to any\n`.offcanvas-{sm|md|lg|xl|xxl}` class.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "**Thicker table dividers are now opt-in. —** We've removed the thicker and\nmore difficult to override border between table groups and moved it to an\noptional class you can apply, `.table-group-divider`. [See the table docs for\nan example.]({{< docsref \"/content/tables#table-group-dividers\" >}})",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "**[Scrollspy has been rewritten](https://github.com/twbs/bootstrap/pull/33421)\nto use the Intersection Observer API**, which means you no longer need\nrelative parent wrappers, deprecates `offset` config, and more. Look for your\nScrollspy implementations to be more accurate and consistent in their nav\nhighlighting.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "**Popovers and tooltips now use CSS variables.** Some CSS variables have\nbeen updated from their Sass counterparts to reduce the number of variables.\nAs a result, three variables have been deprecated in this release:\n`$popover-arrow-color`, `$popover-arrow-outer-color`, and\n`$tooltip-arrow-color`.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "**Added new `.text-bg-{color}` helpers.** Instead of setting individual\n`.text-*` and `.bg-*` utilities, you can now use [the `.text-bg-*`\nhelpers]({{< docsref \"helpers/color-background\" >}}) to set a\n`background-color` with contrasting foreground `color`.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Added `.form-check-reverse` modifier to flip the order of labels and\nassociated checkboxes/radios.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Added [striped columns]({{< docsref \"/content/tables#striped-columns\" >}})\nsupport to tables via the new `.table-striped-columns` class.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       }
     ]
@@ -627,55 +627,55 @@
       {
         "content": "**Added experimental support for [CSS Grid\nlayout]({{< docsref \"/layout/css-grid\" >}}). —** This is a work in progress,\nand is not yet ready for production use, but you can opt into the new feature\nvia Sass. To enable it, disable the default grid, by setting\n`$enable-grid-classes: false` and enable the CSS Grid by setting\n`$enable-cssgrid: true`.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "**Updated navbars to support offcanvas. —** Add [offcanvas drawers in any\nnavbar]({{< docsref \"/components/navbar#offcanvas\" >}}) with the responsive\n`.navbar-expand-*` classes and some offcanvas markup.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "**Added new [placeholder\ncomponent]({{< docsref \"/components/placeholders/\" >}}). —** Our newest\ncomponent, a way to provide temporary blocks in lieu of real content to help\nindicate that something is still loading in your site or app.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "**Collapse plugin now supports [horizontal\ncollapsing]({{< docsref \"/components/collapse#horizontal\" >}}). —** Add\n`.collapse-horizontal` to your `.collapse` to collapse the `width` instead of\nthe `height`. Avoid browser repainting by setting a `min-height` or `height`.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "**Added new stack and vertical rule helpers. —** Quickly apply multiple\nflexbox properties to quickly create custom layouts with\n[stacks]({{< docsref \"/helpers/stacks/\" >}}). Choose from horizontal\n(`.hstack`) and vertical (`.vstack`) stacks. Add vertical dividers similar to\n`<hr>` elements with the [new `.vr`\nhelpers]({{< docsref \"/helpers/vertical-rule/\" >}}).",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "**Added new global `:root` CSS variables. —** Added several new CSS\nvariables to the `:root` level for controlling `<body>` styles. More are in\nthe works, including across our utilities and components, but for now read up\n[CSS variables in the Customize\nsection]({{< docsref \"/customize/css-variables/\" >}}).",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "**Overhauled color and background utilities to use CSS variables, and\nadded new [text opacity]({{< docsref \"/utilities/text#opacity\" >}}) and\n[background opacity]({{< docsref \"/utilities/background#opacity\" >}})\nutilities. —** `.text-*` and `.bg-*` utilities are now built with CSS\nvariables and `rgba()` color values, allowing you to easily customize any\nutility with new opacity utilities.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "**Added new snippet examples based to show how to customize our\ncomponents. —** Pull ready to use customized components and other common\ndesign patterns with our new [Snippets\nexamples]({{< docsref \"/examples#snippets\" >}}). Includes\n[footers]({{< docsref \"/examples/footers/\" >}}),\n[dropdowns]({{< docsref \"/examples/dropdowns/\" >}}), [list\ngroups]({{< docsref \"/examples/list-groups/\" >}}), and\n[modals]({{< docsref \"/examples/modals/\" >}}).",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "**Removed unused positioning styles from popovers and tooltips** as these\nare handled solely by Popper. `$tooltip-margin` has been deprecated and set to\n`null` in the process.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       }
     ]
@@ -692,25 +692,25 @@
       {
         "content": "Dropped jQuery.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Upgraded from Popper v1.x to Popper v2.x.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Replaced Libsass with Dart Sass as our Sass compiler given Libsass was\ndeprecated.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Migrated from Jekyll to Hugo for building our documentation",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       }
     ]
@@ -722,37 +722,37 @@
       {
         "content": "Dropped Internet Explorer 10 and 11",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Dropped Microsoft Edge < 16 (Legacy Edge)",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Dropped Firefox < 60",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Dropped Safari < 12",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Dropped iOS Safari < 12",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Dropped Chrome < 60",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       }
     ]
@@ -764,55 +764,55 @@
       {
         "content": "Redesigned homepage, docs layout, and footer.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Added [new Parcel guide]({{< docsref \"/getting-started/parcel\" >}}).",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Added [new Customize section]({{< docsref \"/customize/overview\" >}}),\nreplacing\n[v4's Theming page](https://getbootstrap.com/docs/4.6/getting-started/theming/),\nwith new details on Sass, global configuration options, color schemes, CSS\nvariables, and more.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Reorganized all form documentation into [new Forms\nsection]({{< docsref \"/forms/overview\" >}}), breaking apart the content into\nmore focused pages.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Similarly, updated [the Layout\nsection]({{< docsref \"/layout/breakpoints\" >}}), to flesh out grid content\nmore clearly.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Renamed \"Navs\" component page to \"Navs & Tabs\".",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Renamed \"Checks\" page to \"Checks & radios\".",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Redesigned the navbar and added a new subnav to make it easier to get\naround our sites and docs versions.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Added new keyboard shortcut for the search field: <kbd><kbd>Ctrl</kbd> +\n<kbd>/</kbd></kbd>.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       }
     ]
@@ -824,145 +824,145 @@
       {
         "content": "We've ditched the default Sass map merges to make it easier to remove\nredundant values. Keep in mind you now have to define all values in the Sass\nmaps like `$theme-colors`. Check out how to deal with [Sass\nmaps]({{< docsref \"/customize/sass#maps-and-loops\" >}}).",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "`$yiq-contrasted-threshold` is renamed to `$min-contrast-ratio`.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "`$yiq-text-dark` and `$yiq-text-light` are respectively renamed to\n`$color-contrast-dark` and `$color-contrast-light`.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "`$yiq-text-dark` and `$yiq-text-light` are respectively renamed to\n`$color-contrast-dark` and `$color-contrast-light`.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "`media-breakpoint-down()` uses the breakpoint itself instead of the next\nbreakpoint (e.g., `media-breakpoint-down(lg)` instead of\n`media-breakpoint-down(md)` targets viewports smaller than `lg`).",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Similarly, the second parameter in `media-breakpoint-between()` also\nuses the breakpoint itself instead of the next breakpoint (e.g.,\n`media-breakpoint-between(sm, lg)` instead of\n`media-breakpoint-between(sm, md)` targets viewports between `sm` and `lg`).",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Similarly, the second parameter in `media-breakpoint-between()` also\nuses the breakpoint itself instead of the next breakpoint (e.g.,\n`media-breakpoint-between(sm, lg)` instead of\n`media-breakpoint-between(sm, md)` targets viewports between `sm` and `lg`).",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Removed print styles and `$enable-print-styles` variable. Print display\nclasses are still around.\n[See #28339](https://github.com/twbs/bootstrap/pull/28339).",
         "priority": 0,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Dropped `color()`, `theme-color()`, and `gray()` functions in favor of\nvariables. [See #29083](https://github.com/twbs/bootstrap/pull/29083).",
         "priority": 0,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Renamed `theme-color-level()` function to `color-level()` and now accepts\nany color you want instead of only `$theme-color` colors.\n[See #29083](https://github.com/twbs/bootstrap/pull/29083) **Watch out:**\n`color-level()` was later on dropped in `v5.0.0-alpha3`.",
         "priority": 0,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Renamed `$enable-prefers-reduced-motion-media-query` and\n`$enable-pointer-cursor-for-buttons` to `$enable-reduced-motion` and\n`$enable-button-pointers` for brevity.",
         "priority": 0,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Removed the `bg-gradient-variant()` mixin. Use the `.bg-gradient` class to\nadd gradients to elements instead of the generated `.bg-gradient-*` classes.",
         "priority": 0,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "`hover`, `hover-focus`, `plain-hover-focus`, and `hover-focus-active`",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "`float()`",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "`form-control-mixin()`",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "`nav-divider()`",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "`retina-img()`",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "`text-hide()` (also dropped the associated utility class, `.text-hide`)",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "`visibility()`",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "`form-control-focus()`",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "`form-control-focus()`",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Renamed `scale-color()` function to `shift-color()` to avoid collision\nwith Sass's own color scaling function.",
         "priority": 0,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "`box-shadow` mixins now allow `null` values and drop `none` from multiple\narguments. [See #30394](https://github.com/twbs/bootstrap/pull/30394).",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "The `border-radius()` mixin now has a default value.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       }
     ]
@@ -974,25 +974,25 @@
       {
         "content": "The color system which worked with `color-level()` and\n`$theme-color-interval` was removed in favor of a new color system. All\n`lighten()` and `darken()` functions in our codebase are replaced by\n`tint-color()` and `shade-color()`. These functions will mix the color with\neither white or black instead of changing its lightness by a fixed amount. The\n`shift-color()` will either tint or shade a color depending on whether its\nweight parameter is positive or negative.\n[See #30622](https://github.com/twbs/bootstrap/pull/30622) for more details.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Added new tints and shades for every color, providing nine separate colors\nfor each base color, as new Sass variables.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Improved color contrast. Bumped color contrast ratio from 3:1 to 4.5:1 and\nupdated blue, green, cyan, and pink colors to ensure WCAG 2.1 AA contrast.\nAlso changed our color contrast color from `$gray-900` to `$black`.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "To support our color system, we've added new custom `tint-color()` and\n`shade-color()` functions to mix our colors appropriately.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       }
     ]
@@ -1004,61 +1004,61 @@
       {
         "content": "**New breakpoint!** Added new `xxl` breakpoint for `1400px` and up. No\nchanges to all other breakpoints.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Added new [gutter class]({{< docsref \"/layout/gutters\" >}}) (`.g-*`,\n`.gx-*`, and `.gy-*`) to control horizontal/vertical gutters, horizontal\ngutters, and vertical gutters.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Renamed `.no-gutters` to `.g-0` to match new gutter utilities.",
         "priority": 0,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Renamed `.no-gutters` to `.g-0` to match new gutter utilities.",
         "priority": 0,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Columns no longer have `position: relative` applied, so you may have to\nadd `.position-relative` to some elements to restore that behavior.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Dropped several `.order-*` classes that often went unused. We now only\nprovide `.order-1` to `.order-5` out of the box.",
         "priority": 0,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Dropped the `.media` component as it can be easily replicated with\nutilities. [See #28265](https://github.com/twbs/bootstrap/pull/28265) and the\n[flex utilities page for an\nexample]({{< docsref \"/utilities/flex#media-object\" >}}).",
         "priority": 0,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "`bootstrap-grid.css` now only applies `box-sizing: border-box` to the\ncolumn instead of resetting the global box-sizing. This way, our grid styles\ncan be used in more places without interference.",
         "priority": 0,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "`$enable-grid-classes` no longer disables the generation of container\nclasses anymore. [See #29146.](https://github.com/twbs/bootstrap/pull/29146)",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Updated the `make-col` mixin to default to equal columns without a\nspecified size.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       }
     ]
@@ -1070,91 +1070,91 @@
       {
         "content": "**[RFS]({{< docsref \"/getting-started/rfs\" >}}) is now enabled by\ndefault.** Headings using the `font-size()` mixin will automatically adjust\ntheir `font-size` to scale with the viewport. _This feature was previously\nopt-in with v4._",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Overhauled our display typography to replace our `$display-*` variables\nand with a `$display-font-sizes` Sass map. Also removed the individual\n`$display-*-weight` variables for a single `$display-font-weight` and adjusted\n`font-size`s.",
         "priority": 0,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Added two new `.display-*` heading sizes, `.display-5` and `.display-6`.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "**Links are underlined by default** (not just on hover), unless they're\npart of specific components.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "**Redesigned tables** to refresh their styles and rebuild them with CSS\nvariables for more control over styling.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Nested tables do not inherit styles anymore.",
         "priority": 0,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "`.thead-light` and `.thead-dark` are dropped in favor of the `.table-*`\nvariant classes which can be used for all table elements (`thead`, `tbody`,\n`tfoot`, `tr`, `th` and `td`).",
         "priority": 0,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "The `table-row-variant()` mixin is renamed to `table-variant()` and\naccepts only 2 parameters: `$color` (color name) and `$value` (color code).\nThe border color and accent colors are automatically calculated based on the\ntable factor variables.",
         "priority": 0,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Split table cell padding variables into `-y` and `-x`.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Dropped `.pre-scrollable` class.\n[See #29135](https://github.com/twbs/bootstrap/pull/29135)",
         "priority": 0,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "`.text-*` utilities do not add hover and focus states to links anymore.\n`.link-*` helper classes can be used instead.\n[See #29267](https://github.com/twbs/bootstrap/pull/29267)",
         "priority": 0,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Dropped `.text-justify` class.\n[See #29793](https://github.com/twbs/bootstrap/pull/29793)",
         "priority": 0,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "~~`<hr>` elements now use `height` instead of `border` to better support\nthe `size` attribute. This also enables use of padding utilities to create\nthicker dividers (e.g., `<hr class=\"py-1\">`).~~",
         "priority": 0,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Reset default horizontal `padding-left` on `<ul>` and `<ol>` elements from\nbrowser default `40px` to `2rem`.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Added `$enable-smooth-scroll`, which applies `scroll-behavior: smooth`\nglobally—except for users asking for reduced motion through\n`prefers-reduced-motion` media query.\n[See #31877](https://github.com/twbs/bootstrap/pull/31877)",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       }
     ]
@@ -1166,7 +1166,7 @@
       {
         "content": "Horizontal direction specific variables, utilities, and mixins have all\nbeen renamed to use logical properties like those found in flexbox\nlayouts—e.g., `start` and `end` in lieu of `left` and `right`.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       }
     ]
@@ -1178,103 +1178,103 @@
       {
         "content": "**Added new floating forms!** We've promoted the Floating labels example\nto fully supported form components. [See the new Floating labels\npage.]({{< docsref \"/forms/floating-labels\" >}})",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "`.custom-control.custom-checkbox` is now `.form-check`.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "`.custom-control.custom-radio` is now `.form-check`.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "`.custom-control.custom-switch` is now `.form-check.form-switch`.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "`.custom-select` is now `.form-select`.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "`.custom-file` and `.form-control-file` have been replaced by custom\nstyles on top of `.form-control`.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "`.custom-range` is now `.form-range`.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Dropped native `.form-control-file` and `.form-control-range`.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Dropped native `.form-control-file` and `.form-control-range`.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Dropped `.input-group-append` and `.input-group-prepend`. You can now just\nadd buttons and `.input-group-text` as direct children of the input groups.",
         "priority": 0,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "The longstanding\n[Missing border radius on input group with validation feedback bug](https://github.com/twbs/bootstrap/issues/25110)\nis finally fixed by adding an additional `.has-validation` class to input\ngroups with validation.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "**Dropped form-specific layout classes for our grid system.** Use our grid\nand utilities instead of `.form-group`, `.form-row`, or `.form-inline`.",
         "priority": 0,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Form labels now require `.form-label`.",
         "priority": 0,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "`.form-text` no longer sets `display`, allowing you to create inline or\nblock help text as you wish just by changing the HTML element.",
         "priority": 0,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Form controls no longer used fixed `height` when possible, instead\ndeferring to `min-height` to improve customization and compatibility with\nother components.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Validation icons are no longer applied to `<select>`s with `multiple`.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Rearranged source Sass files under `scss/forms/`, including input group\nstyles.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       }
     ]
@@ -1286,7 +1286,7 @@
       {
         "content": "Unified `padding` values for alerts, breadcrumbs, cards, dropdowns, list\ngroups, modals, popovers, and tooltips to be based on our `$spacer` variable.\n[See #30564](https://github.com/twbs/bootstrap/pull/30564).",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       }
     ]
@@ -1298,7 +1298,7 @@
       {
         "content": "Added [new accordion component]({{< docsref \"/components/accordion\" >}}).",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       }
     ]
@@ -1310,13 +1310,13 @@
       {
         "content": "Alerts now have [examples with\nicons]({{< docsref \"/components/alerts#icons\" >}}).",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Removed custom styles for `<hr>`s in each alert since they already use\n`currentColor`.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       }
     ]
@@ -1328,25 +1328,25 @@
       {
         "content": "Dropped all `.badge-*` color classes for background utilities (e.g., use\n`.bg-primary` instead of `.badge-primary`).",
         "priority": 0,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Dropped `.badge-pill`—use the `.rounded-pill` utility instead.",
         "priority": 0,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Removed hover and focus styles for `<a>` and `<button>` elements.",
         "priority": 0,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Increased default padding for badges from `.25em`/`.5em` to\n`.35em`/`.65em`.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       }
     ]
@@ -1358,13 +1358,13 @@
       {
         "content": "Simplified the default appearance of breadcrumbs by removing `padding`,\n`background-color`, and `border-radius`.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Added new CSS custom property `--bs-breadcrumb-divider` for easy\ncustomization without needing to recompile CSS.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       }
     ]
@@ -1376,31 +1376,31 @@
       {
         "content": "**[Toggle buttons]({{< docsref \"/forms/checks-radios#toggle-buttons\" >}}),\nwith checkboxes or radios, no longer require JavaScript and have new markup.**\nWe no longer require a wrapping element, add `.btn-check` to the `<input>`,\nand pair it with any `.btn` classes on the `<label>`.\n[See #30650](https://github.com/twbs/bootstrap/pull/30650). _The docs for this\nhas moved from our Buttons page to the new Forms section._",
         "priority": 0,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "**Dropped `.btn-block` for utilities.** Instead of using `.btn-block` on\nthe `.btn`, wrap your buttons with `.d-grid` and a `.gap-*` utility to space\nthem as needed. Switch to responsive classes for even more control over them.\n[Read the docs for some\nexamples.]({{< docsref \"/components/buttons#block-buttons\" >}})",
         "priority": 0,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Updated our `button-variant()` and `button-outline-variant()` mixins to\nsupport additional parameters.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Updated buttons to ensure increased contrast on hover and active states.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Disabled buttons now have `pointer-events: none;`.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       }
     ]
@@ -1412,19 +1412,19 @@
       {
         "content": "Dropped `.card-deck` in favor of our grid. Wrap your cards in column\nclasses and add a parent `.row-cols-*` container to recreate card decks (but\nwith more control over responsive alignment).",
         "priority": 0,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Dropped `.card-columns` in favor of Masonry.\n[See #28922](https://github.com/twbs/bootstrap/pull/28922).",
         "priority": 0,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Replaced the `.card` based accordion with a [new Accordion\ncomponent]({{< docsref \"/components/accordion\" >}}).",
         "priority": 0,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       }
     ]
@@ -1436,13 +1436,13 @@
       {
         "content": "Added new [`.carousel-dark`\nvariant]({{< docsref \"/components/carousel#dark-variant\" >}}) for dark text,\ncontrols, and indicators (great for lighter backgrounds).",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Replaced chevron icons for carousel controls with new SVGs from [Bootstrap\nIcons]({{< param \"icons\" >}}).",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       }
     ]
@@ -1454,19 +1454,19 @@
       {
         "content": "Renamed `.close` to `.btn-close` for a less generic name.",
         "priority": 0,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Close buttons now use a `background-image` (embedded SVG) instead of a\n`&times;` in the HTML, allowing for easier customization without the need to\ntouch your markup.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Added new `.btn-close-white` variant that uses `filter: invert(1)` to\nenable higher contrast dismiss icons against darker backgrounds.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       }
     ]
@@ -1478,7 +1478,7 @@
       {
         "content": "Removed scroll anchoring for accordions.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       }
     ]
@@ -1490,49 +1490,49 @@
       {
         "content": "Added new `.dropdown-menu-dark` variant and associated variables for\non-demand dark dropdowns.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Added new variable for `$dropdown-padding-x`.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Darkened the dropdown divider for improved contrast.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "All the events for the dropdown are now triggered on the dropdown toggle\nbutton and then bubbled up to the parent element.",
         "priority": 0,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Dropdown menus now have a `data-bs-popper=\"static\"` attribute set when the\npositioning of the dropdown is static, or dropdown is in the navbar. This is\nadded by our JavaScript and helps us use custom position styles without\ninterfering with Popper's positioning.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Dropped `flip` option for dropdown plugin in favor of native Popper\nconfiguration. You can now disable the flipping behavior by passing an empty\narray for\n[`fallbackPlacements`](https://popper.js.org/docs/v2/modifiers/flip/#fallbackplacements)\noption in [flip](https://popper.js.org/docs/v2/modifiers/flip/) modifier.",
         "priority": 0,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Dropdown menus can now be clickable with a new `autoClose` option to\nhandle the [auto close\nbehavior]({{< docsref \"/components/dropdowns#auto-close-behavior\" >}}). You\ncan use this option to accept the click inside or outside the dropdown menu to\nmake it interactive.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Dropdowns now support `.dropdown-item`s wrapped in `<li>`s.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       }
     ]
@@ -1544,7 +1544,7 @@
       {
         "content": "Dropped the jumbotron component as it can be replicated with utilities.\n[See our new Jumbotron example for a\ndemo.]({{< docsref \"/examples/jumbotron\" >}})",
         "priority": 0,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       }
     ]
@@ -1556,7 +1556,7 @@
       {
         "content": "Added new [`.list-group-numbered`\nmodifier]({{< docsref \"/components/list-group#numbered\" >}}) to list groups.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       }
     ]
@@ -1568,7 +1568,7 @@
       {
         "content": "Added new `null` variables for `font-size`, `font-weight`, `color`, and\n`:hover` `color` to the `.nav-link` class.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       }
     ]
@@ -1580,13 +1580,13 @@
       {
         "content": "Navbars now require a container within (to drastically simplify spacing\nrequirements and CSS required).",
         "priority": 0,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "The `.active` class can no longer be applied to `.nav-item`s, it must be\napplied directly on `.nav-link`s.",
         "priority": 0,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       }
     ]
@@ -1598,7 +1598,7 @@
       {
         "content": "Added the new [offcanvas\ncomponent]({{< docsref \"/components/offcanvas\" >}}).",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       }
     ]
@@ -1610,13 +1610,13 @@
       {
         "content": "Pagination links now have customizable `margin-left` that are dynamically\nrounded on all corners when separated from one another.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Added `transition`s to pagination links.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       }
     ]
@@ -1628,13 +1628,13 @@
       {
         "content": "Renamed `.arrow` to `.popover-arrow` in our default popover template.",
         "priority": 0,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Renamed `whiteList` option to `allowList`.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       }
     ]
@@ -1646,13 +1646,13 @@
       {
         "content": "Spinners now honor `prefers-reduced-motion: reduce` by slowing down\nanimations. [See #31882](https://github.com/twbs/bootstrap/pull/31882).",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Improved spinner vertical alignment.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       }
     ]
@@ -1664,19 +1664,19 @@
       {
         "content": "Toasts can now be\n[positioned]({{< docsref \"/components/toasts#placement\" >}}) in a\n`.toast-container` with the help of [positioning\nutilities]({{< docsref \"/utilities/position\" >}}).",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Changed default toast duration to 5 seconds.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Removed `overflow: hidden` from toasts and replaced with proper\n`border-radius`s with `calc()` functions.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       }
     ]
@@ -1688,19 +1688,19 @@
       {
         "content": "Renamed `.arrow` to `.tooltip-arrow` in our default tooltip template.",
         "priority": 0,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "The default value for the `fallbackPlacements` is changed to\n`['top', 'right', 'bottom', 'left']` for better placement of popper elements.",
         "priority": 0,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Renamed `whiteList` option to `allowList`.",
         "priority": 0,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       }
     ]
@@ -1712,133 +1712,133 @@
       {
         "content": "Renamed `.float-left` and `.float-right` to `.float-start` and\n`.float-end`.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Renamed `.border-left` and `.border-right` to `.border-start` and\n`.border-end`.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Renamed `.rounded-left` and `.rounded-right` to `.rounded-start` and\n`.rounded-end`.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Renamed `.ml-*` and `.mr-*` to `.ms-*` and `.me-*`.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Renamed `.pl-*` and `.pr-*` to `.ps-*` and `.pe-*`.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Renamed `.text-*-left` and `.text-*-right` to `.text-*-start` and\n`.text-*-end`.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Renamed `.text-*-left` and `.text-*-right` to `.text-*-start` and\n`.text-*-end`.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Disabled negative margins by default.",
         "priority": 0,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Added new `.bg-body` class for quickly setting the `<body>`'s background\nto additional elements.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Added new [position\nutilities]({{< docsref \"/utilities/position#arrange-elements\" >}}) for `top`,\n`right`, `bottom`, and `left`. Values include `0`, `50%`, and `100%` for each\nproperty.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Added new `.translate-middle-x` & `.translate-middle-y` utilities to\nhorizontally or vertically center absolute/fixed positioned elements.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Added new [`border-width`\nutilities]({{< docsref \"/utilities/borders#border-width\" >}}).",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Renamed `.text-monospace` to `.font-monospace`.",
         "priority": 0,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Removed `.text-hide` as it's an antiquated method for hiding text that\nshouldn't be used anymore.",
         "priority": 0,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Added `.fs-*` utilities for `font-size` utilities (with RFS enabled).\nThese use the same scale as HTML's default headings (1-6, large to small), and\ncan be modified via Sass map.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Renamed `.font-weight-*` utilities as `.fw-*` for brevity and consistency.",
         "priority": 0,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Renamed `.font-italic` utility to `.fst-italic` for brevity and\nconsistency with new `.fst-normal` utility.",
         "priority": 0,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Added `.d-grid` to display utilities and new `gap` utilities (`.gap`) for\nCSS Grid and flexbox layouts.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Removed `.rounded-sm` and `rounded-lg`, and introduced a new scale of\nclasses, `.rounded-0` to `.rounded-3`.\n[See #31687](https://github.com/twbs/bootstrap/pull/31687).",
         "priority": 0,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Added new `line-height` utilities: `.lh-1`, `.lh-sm`, `.lh-base` and\n`.lh-lg`. See [here]({{< docsref \"/utilities/text#line-height\" >}}).",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Moved the `.d-none` utility in our CSS to give it more weight over other\ndisplay utilities.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Extended the `.visually-hidden-focusable` helper to also work on\ncontainers, using `:focus-within`.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       }
     ]
@@ -1850,61 +1850,61 @@
       {
         "content": "Classes have been renamed to change `by` to `x` in the aspect ratio. For\nexample, `.ratio-16by9` is now `.ratio-16x9`.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "We've dropped the `.embed-responsive-item` and element group selector in\nfavor of a simpler `.ratio > *` selector. No more class is needed, and the\nratio helper now works with any HTML element.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "The `$embed-responsive-aspect-ratios` Sass map has been renamed to\n`$aspect-ratios` and its values have been simplified to include the class\nname and the percentage as the `key: value` pair.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "CSS variables are now generated and included for each value in the Sass\nmap. Modify the `--bs-aspect-ratio` variable on the `.ratio` to create any\n[custom aspect ratio]({{< docsref \"/helpers/ratio#custom-ratios\" >}}).",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "CSS variables are now generated and included for each value in the Sass\nmap. Modify the `--bs-aspect-ratio` variable on the `.ratio` to create any\n[custom aspect ratio]({{< docsref \"/helpers/ratio#custom-ratios\" >}}).",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Changed the Sass file from `scss/helpers/_screenreaders.scss` to\n`scss/helpers/_visually-hidden.scss`",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Renamed `.sr-only` and `.sr-only-focusable` to `.visually-hidden` and\n`.visually-hidden-focusable`",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Renamed `sr-only()` and `sr-only-focusable()` mixins to\n`visually-hidden()` and `visually-hidden-focusable()`.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Renamed `sr-only()` and `sr-only-focusable()` mixins to\n`visually-hidden()` and `visually-hidden-focusable()`.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "`bootstrap-utilities.css` now also includes our helpers. Helpers don't\nneed to be imported in custom builds anymore.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       }
     ]
@@ -1916,37 +1916,37 @@
       {
         "content": "**Dropped jQuery dependency** and rewrote plugins to be in regular\nJavaScript.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Data attributes for all JavaScript plugins are now namespaced to help\ndistinguish Bootstrap functionality from third parties and your own code. For\nexample, we use `data-bs-toggle` instead of `data-toggle`.",
         "priority": 0,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "**All plugins can now accept a CSS selector as the first argument.** You\ncan either pass a DOM element or any valid CSS selector to create a new\ninstance of the plugin:",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "`popperConfig` can be passed as a function that accepts the Bootstrap's\ndefault Popper config as an argument, so that you can merge this default\nconfiguration in your way. **Applies to dropdowns, popovers, and tooltips.**",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "The default value for the `fallbackPlacements` is changed to\n`['top', 'right', 'bottom', 'left']` for better placement of Popper elements.\n**Applies to dropdowns, popovers, and tooltips.**",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       },
       {
         "content": "Removed underscore from public static methods like `_getInstance()` →\n`getInstance()`.",
         "priority": 1,
-        "status": "",
+        "status": "Not Started",
         "notes": "empty"
       }
     ]

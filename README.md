@@ -32,18 +32,18 @@ The example is from Bootstrap 5.3 Update
 
 ## 🎉 Coming soon:
 
-- ✅ Add to local storage
-- ✅ Export from local storage
-- ✅ Edit status
-- ✅ Add notes
-- ✅ Add tailwind
-- Filter tasks
-- Collapsible groups
-  - collapse all
-  - expand all
-- Make it work on server as an APP
-- Statistics
-- better UI/UX
+- [0] ✅ Add to local storage
+- [0] ✅ Export from local storage
+- [0] ✅ Edit status
+- [0] ✅ Add notes
+- [0] ✅ Add tailwind
+- [1] Filter tasks
+- [2] Collapsible groups
+  - [2] collapse all
+  - [2] expand all
+- [3]Make it work on server as an APP
+- [4]Statistics
+- [5]better UI/UX
 
 ## ❤️ Thanks
 

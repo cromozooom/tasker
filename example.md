@@ -16,7 +16,7 @@ Use **Live Server** in VSCode to see the tasks.
 
 The example is from this README.md
 
-## 👉 How?
+## 💪 How?
 
 ### Generate tasks mode
 
@@ -32,7 +32,7 @@ The example is from this README.md
 
 ## Dev status
 
-### Done
+### 🎉 Done
 
 - [0] Add to local storage
 - [0] Export from local storage
@@ -41,17 +41,17 @@ The example is from this README.md
 - [0] Add notes
 - [0] Add tailwind
 
-## 🎉 Coming soon:
+## 📣 Coming soon:
 
 - [1] Filter tasks
 - [2] Collapsible groups
   - [2] collapse all
   - [2] expand all
-- [3]Make it work on server as an APP
-- [4]Statistics
-- [5]better UI/UX
+- [3] Make it work on server as an APP
+- [4] Statistics
+- [5] better UI/UX
 
-## ❤️ Thanks
+## 👄 Thanks
 
 - [AlpineJS](https://alpinejs.dev/),
 - [Tailwindcss](https://tailwindcss.com/),

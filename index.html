@@ -52,7 +52,10 @@
         <div>
           <div class="flex justify-between items-center p-2">
             <h1 class="text-xl font-bold">Tasker</h1>
-            <button @click="downloadTasks()" class="p-3 border">
+            <button
+              @click="downloadTasks()"
+              class="p-3 border bg-blue-600 text-white rounded-md"
+            >
               Download Tasks
             </button>
           </div>
@@ -74,7 +77,7 @@
                     :class="'task priority-' + task.priority"
                     class="flex flex-col border-b m-3 py-2"
                   >
-                    <div class="flex items-start">
+                    <div class="flex items-start pb-2">
                       <div>
                         <span
                           :class="taskClass(task.priority)"
@@ -82,7 +85,7 @@
                           x-text="task.priority"
                         ></span>
                       </div>
-                      <div class="">
+                      <div class="pt-1">
                         <div x-html="renderMarkdown(task.content)"></div>
                       </div>
                     </div>
@@ -100,8 +103,9 @@
                     </label>
 
                     <label><strong>Notes:</strong></label>
-                    <div x-html="renderMarkdown(task.notes)"></div>
+                    <!-- <div x-html="renderMarkdown(task.notes)"></div> -->
                     <textarea
+                      x-model="task.notes"
                       :id="'editor-' + sectionIndex + '-' + taskIndex"
                       x-ref="'editor-' + sectionIndex + '-' + taskIndex"
                       @click="initializeEditor($event, sectionIndex, taskIndex)"
@@ -153,6 +157,12 @@
                   this.error = "Failed to load tasks: " + error.message;
                 });
             }
+
+            // Register a global click event listener
+            document.addEventListener(
+              "click",
+              this.handleClickOutside.bind(this)
+            );
           },
           saveToLocalStorage() {
             localStorage.setItem("tasks", JSON.stringify(this.sections));
@@ -163,8 +173,6 @@
 
           initializeEditor(event, sectionIndex, taskIndex) {
             const element = event.target;
-            console.log("Initializing editor for", sectionIndex, taskIndex);
-            console.log("Element:", element);
             const task = this.sections[sectionIndex].tasks[taskIndex];
             console.log("Task:", task);
 
@@ -177,6 +185,24 @@
                 task.notes = simplemde.value();
                 this.saveToLocalStorage();
               });
+            }
+          },
+
+          handleClickOutside(event) {
+            // Check if the click target is outside the active editor
+            if (
+              this.activeEditor &&
+              !this.activeEditor.contains(event.target)
+            ) {
+              this.destroyEditor(this.activeEditor);
+              this.activeEditor = null;
+            }
+          },
+          destroyEditor(element) {
+            if (element && element.simplemde) {
+              console.log("Destroying editor");
+              element.simplemde.toTextArea();
+              element.simplemde = null;
             }
           },
 

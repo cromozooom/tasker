@@ -41,7 +41,7 @@ function parseMarkdownToTasks(markdownFilePath) {
           currentSection.tasks.push({
             content: content, // Store the content without the [...] part
             priority: priority,
-            status: "",
+            status: "Not Started",
             notes: "",
           });
         }

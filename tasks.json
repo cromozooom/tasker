@@ -6,20 +6,20 @@
       {
         "content": "Dropped jQuery.",
         "priority": 1,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       },
       {
         "content": "Upgraded from Popper v1.x to Popper v2.x.",
         "priority": 1,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       },
       {
         "content": "Migrated from Jekyll to Hugo for building our documentation",
         "priority": 1,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       }
     ]
   },
@@ -30,38 +30,38 @@
       {
         "content": "Dropped Internet Explorer 10 and 11",
         "priority": 1,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       },
       {
         "content": "Dropped Microsoft Edge < 16 (Legacy Edge)",
         "priority": 1,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       },
       {
         "content": "Dropped Firefox < 60",
         "priority": 1,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       },
       {
         "content": "Dropped Safari < 12",
         "priority": 1,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       },
       {
         "content": "Dropped iOS Safari < 12",
         "priority": 1,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       },
       {
         "content": "Dropped Chrome < 60",
         "priority": 1,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       }
     ]
   },
@@ -72,26 +72,26 @@
       {
         "content": "Redesigned homepage, docs layout, and footer.",
         "priority": 1,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       },
       {
         "content": "Added [new Parcel guide]({{< docsref \"/getting-started/parcel\" >}}).",
         "priority": 1,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       },
       {
         "content": "Renamed \"Navs\" component page to \"Navs & Tabs\".",
         "priority": 1,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       },
       {
         "content": "Renamed \"Checks\" page to \"Checks & radios\".",
         "priority": 1,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       }
     ]
   },
@@ -102,68 +102,68 @@
       {
         "content": "`$yiq-contrasted-threshold` is renamed to `$min-contrast-ratio`.",
         "priority": 1,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       },
       {
         "content": "**Removed previously deprecated mixins:**[1] `hover`, `hover-focus`, `plain-hover-focus`, and `hover-focus-active`",
         "priority": 0,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       },
       {
         "content": "`hover`, `hover-focus`, `plain-hover-focus`, and `hover-focus-active`",
         "priority": 1,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       },
       {
         "content": "`float()`",
         "priority": 1,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       },
       {
         "content": "`form-control-mixin()`",
         "priority": 1,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       },
       {
         "content": "`nav-divider()`",
         "priority": 1,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       },
       {
         "content": "`retina-img()`",
         "priority": 1,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       },
       {
         "content": "`text-hide()` (also dropped the associated utility class, `.text-hide`)",
         "priority": 1,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       },
       {
         "content": "`visibility()`",
         "priority": 1,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       },
       {
         "content": "`form-control-focus()`",
         "priority": 1,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       },
       {
         "content": "The `border-radius()` mixin now has a default value.",
         "priority": 1,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       }
     ]
   },
@@ -174,8 +174,8 @@
       {
         "content": "Renamed `.no-gutters` to `.g-0` to match new gutter utilities.",
         "priority": 0,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       }
     ]
   },
@@ -186,20 +186,20 @@
       {
         "content": "Added two new `.display-*` heading sizes, `.display-5` and `.display-6`.",
         "priority": 1,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       },
       {
         "content": "Nested tables do not inherit styles anymore.",
         "priority": 0,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       },
       {
         "content": "Split table cell padding variables into `-y` and `-x`.",
         "priority": 1,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       }
     ]
   },
@@ -210,50 +210,50 @@
       {
         "content": "`.custom-control.custom-checkbox` is now `.form-check`.",
         "priority": 1,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       },
       {
         "content": "`.custom-control.custom-radio` is now `.form-check`.",
         "priority": 1,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       },
       {
         "content": "`.custom-control.custom-switch` is now `.form-check.form-switch`.",
         "priority": 1,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       },
       {
         "content": "`.custom-select` is now `.form-select`.",
         "priority": 1,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       },
       {
         "content": "`.custom-range` is now `.form-range`.",
         "priority": 1,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       },
       {
         "content": "Dropped native `.form-control-file` and `.form-control-range`.",
         "priority": 1,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       },
       {
         "content": "Form labels now require `.form-label`.",
         "priority": 0,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       },
       {
         "content": "Validation icons are no longer applied to `<select>`s with `multiple`.",
         "priority": 1,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       }
     ]
   },
@@ -264,8 +264,8 @@
       {
         "content": "Added [new accordion component]({{< docsref \"/components/accordion\" >}}).",
         "priority": 1,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       }
     ]
   },
@@ -276,14 +276,14 @@
       {
         "content": "Dropped `.badge-pill`—use the `.rounded-pill` utility instead.",
         "priority": 0,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       },
       {
         "content": "Removed hover and focus styles for `<a>` and `<button>` elements.",
         "priority": 0,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       }
     ]
   },
@@ -294,14 +294,14 @@
       {
         "content": "Updated buttons to ensure increased contrast on hover and active states.",
         "priority": 1,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       },
       {
         "content": "Disabled buttons now have `pointer-events: none;`.",
         "priority": 1,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       }
     ]
   },
@@ -312,8 +312,8 @@
       {
         "content": "Renamed `.close` to `.btn-close` for a less generic name.",
         "priority": 0,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       }
     ]
   },
@@ -324,8 +324,8 @@
       {
         "content": "Removed scroll anchoring for accordions.",
         "priority": 1,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       }
     ]
   },
@@ -336,20 +336,20 @@
       {
         "content": "Added new variable for `$dropdown-padding-x`.",
         "priority": 1,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       },
       {
         "content": "Darkened the dropdown divider for improved contrast.",
         "priority": 1,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       },
       {
         "content": "Dropdowns now support `.dropdown-item`s wrapped in `<li>`s.",
         "priority": 1,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       }
     ]
   },
@@ -360,8 +360,8 @@
       {
         "content": "Added `transition`s to pagination links.",
         "priority": 1,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       }
     ]
   },
@@ -372,14 +372,14 @@
       {
         "content": "Renamed `.arrow` to `.popover-arrow` in our default popover template.",
         "priority": 0,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       },
       {
         "content": "Renamed `whiteList` option to `allowList`.",
         "priority": 1,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       }
     ]
   },
@@ -390,8 +390,8 @@
       {
         "content": "Improved spinner vertical alignment.",
         "priority": 1,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       }
     ]
   },
@@ -402,8 +402,8 @@
       {
         "content": "Changed default toast duration to 5 seconds.",
         "priority": 1,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       }
     ]
   },
@@ -414,14 +414,14 @@
       {
         "content": "Renamed `.arrow` to `.tooltip-arrow` in our default tooltip template.",
         "priority": 0,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       },
       {
         "content": "Renamed `whiteList` option to `allowList`.",
         "priority": 0,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       }
     ]
   },
@@ -432,32 +432,32 @@
       {
         "content": "Renamed `.ml-*` and `.mr-*` to `.ms-*` and `.me-*`.",
         "priority": 1,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       },
       {
         "content": "Renamed `.pl-*` and `.pr-*` to `.ps-*` and `.pe-*`.",
         "priority": 1,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       },
       {
         "content": "Disabled negative margins by default.",
         "priority": 0,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       },
       {
         "content": "Renamed `.text-monospace` to `.font-monospace`.",
         "priority": 0,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       },
       {
         "content": "Renamed `.font-weight-*` utilities as `.fw-*` for brevity and consistency.",
         "priority": 0,
-        "status": "",
-        "notes": "empty"
+        "status": "Not Started",
+        "notes": ""
       }
     ]
   }

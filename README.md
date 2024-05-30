@@ -42,5 +42,7 @@ The example is from Bootstrap 5.3 Update
 
 ## Thanks
 
-- AlpineJS and
-- markdown-it.
+- [AlpineJS](https://alpinejs.dev/),
+- [tailwindcss](https://tailwindcss.com/),
+- [markdown-it](https://markdown-it.github.io/) and
+- [simplemde-markdown-editor](https://github.com/sparksuite/simplemde-markdown-editor)

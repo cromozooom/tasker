@@ -11,33 +11,6 @@
     ></script>
 
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <style>
-      /* body {
-        font-family: Arial, sans-serif;
-        margin: 20px;
-      }
-      .task {
-        border: 1px solid #ccc;
-        padding: 10px;
-        margin-bottom: 10px;
-        border-radius: 5px;
-      }
-      .priority-1 {
-        border-color: red;
-      }
-      .priority-2 {
-        border-color: orange;
-      }
-      .priority-3 {
-        border-color: yellow;
-      }
-      .priority-4 {
-        border-color: green;
-      }
-      .priority-5 {
-        border-color: blue;
-      } */
-    </style>
   </head>
   <body>
     <div x-data="taskViewer()">
@@ -131,6 +104,7 @@
           sections: [],
           loaded: false,
           error: "",
+          activeEditor: null,
           init() {
             console.log("Fetching tasks...");
             const storedData = localStorage.getItem("tasks");
@@ -186,9 +160,12 @@
                 this.saveToLocalStorage();
               });
             }
+            this.activeEditor = element;
           },
 
           handleClickOutside(event) {
+            console.log(event);
+            console.log(this.activeEditor);
             // Check if the click target is outside the active editor
             if (
               this.activeEditor &&

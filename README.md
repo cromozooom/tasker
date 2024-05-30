@@ -34,6 +34,7 @@ The example is from Bootstrap 5.3 Update
 
 - [0] ✅ Add to local storage
 - [0] ✅ Export from local storage
+- [0] ✅ Reset local storage
 - [0] ✅ Edit status
 - [0] ✅ Add notes
 - [0] ✅ Add tailwind

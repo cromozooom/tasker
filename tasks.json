@@ -1,7 +1,7 @@
 [
   {
-    "title": "Done",
-    "content": "Done\n[0] Add to local storage\n[0] Export from local storage\n[0] Reset local storage\n[0] Edit status\n[0] Add notes\n[0] Add tailwind\n",
+    "title": "🎉 Done",
+    "content": "🎉 Done\n[0] Add to local storage\n[0] Export from local storage\n[0] Reset local storage\n[0] Edit status\n[0] Add notes\n[0] Add tailwind\n",
     "tasks": [
       {
         "content": "Add to local storage",
@@ -42,8 +42,8 @@
     ]
   },
   {
-    "title": "🎉 Coming soon:",
-    "content": "🎉 Coming soon:\n[1] Filter tasks\n[2] Collapsible groups\n[2] collapse all\n[2] expand all\n[3]Make it work on server as an APP\n[4]Statistics\n[5]better UI/UX\n",
+    "title": "📣 Coming soon:",
+    "content": "📣 Coming soon:\n[1] Filter tasks\n[2] Collapsible groups\n[2] collapse all\n[2] expand all\n[3] Make it work on server as an APP\n[4] Statistics\n[5] better UI/UX\n",
     "tasks": [
       {
         "content": "Filter tasks",

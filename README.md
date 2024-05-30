@@ -38,6 +38,7 @@ The example is from Bootstrap 5.3 Update
 - ✅ Add notes
 - ✅ Add tailwind
 - filter tasks
+- make it work on server as an APP
 - Statistics
 - better UI/UX
 

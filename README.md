@@ -36,6 +36,7 @@ The example is from Bootstrap 5.3 Update
 - ✅ Export from local storage
 - ✅ Edit status
 - ✅ Add notes
+- ✅ Add tailwind
 - filter tasks
 - Statistics
 - better UI/UX

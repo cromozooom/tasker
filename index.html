@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Task Viewer</title>
+    <link href="./src/output.css" rel="stylesheet" />
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
@@ -11,7 +12,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
-      body {
+      /* body {
         font-family: Arial, sans-serif;
         margin: 20px;
       }
@@ -35,7 +36,7 @@
       }
       .priority-5 {
         border-color: blue;
-      }
+      } */
     </style>
   </head>
   <body>
@@ -49,46 +50,76 @@
 
       <template x-if="loaded">
         <div>
-          <button @click="downloadTasks()">Download Tasks</button>
+          <div class="flex justify-between items-center p-2">
+            <h1 class="text-xl font-bold">Tasker</h1>
+            <button @click="downloadTasks()" class="p-3 border">
+              Download Tasks
+            </button>
+          </div>
           <template
             x-for="(section, sectionIndex) in sections"
             :key="sectionIndex"
           >
-            <div>
-              <h2 x-text="section.title"></h2>
-              <div x-html="renderMarkdown(section.content)"></div>
-              <template
-                x-for="(task, taskIndex) in section.tasks"
-                :key="sectionIndex + '-' + taskIndex"
-              >
-                <div :class="'task priority-' + task.priority">
-                  <div x-html="renderMarkdown(task.content)"></div>
-                  <p>
-                    <strong>Priority:</strong>
-                    <span x-text="task.priority"></span>
-                  </p>
-                  <label
-                    ><strong>Status:</strong>
-                    <select
-                      x-model="task.status"
-                      @change="saveToLocalStorage()"
-                    >
-                      <option value="">Select status</option>
-                      <option value="Not Started">Not Started</option>
-                      <option value="In Progress">In Progress</option>
-                      <option value="Completed">Completed</option>
-                    </select>
-                  </label>
-                  <p>
-                    <strong>Notes:</strong> <span x-text="task.notes"></span>
-                  </p>
+            <template x-if="section.tasks.length">
+              <div class="p-3">
+                <div class="flex pb-5">
+                  <h2 x-text="section.title" class="font-bold text-xl"></h2>
                 </div>
-              </template>
-            </div>
+                <!-- <div x-html="renderMarkdown(section.content)"></div> -->
+                <template
+                  x-for="(task, taskIndex) in section.tasks"
+                  :key="sectionIndex + '-' + taskIndex"
+                >
+                  <div
+                    :class="'task priority-' + task.priority"
+                    class="flex flex-col border-b m-3 py-2"
+                  >
+                    <div class="flex items-start">
+                      <div>
+                        <span
+                          :class="taskClass(task.priority)"
+                          class="text-white aspect-square w-6 flex justify-center items-center border rounded-full p-1 text-center mr-2"
+                          x-text="task.priority"
+                        ></span>
+                      </div>
+                      <div class="">
+                        <div x-html="renderMarkdown(task.content)"></div>
+                      </div>
+                    </div>
+                    <label
+                      ><strong>Status:</strong>
+                      <select
+                        x-model="task.status"
+                        @change="saveToLocalStorage()"
+                      >
+                        <option value="">Select status</option>
+                        <option value="Not Started">Not Started</option>
+                        <option value="In Progress">In Progress</option>
+                        <option value="Completed">Completed</option>
+                      </select>
+                    </label>
+
+                    <label><strong>Notes:</strong></label>
+                    <div x-html="renderMarkdown(task.notes)"></div>
+                    <textarea
+                      :id="'editor-' + sectionIndex + '-' + taskIndex"
+                      x-ref="'editor-' + sectionIndex + '-' + taskIndex"
+                      @click="initializeEditor($event, sectionIndex, taskIndex)"
+                    ></textarea>
+                  </div>
+                </template>
+              </div>
+            </template>
           </template>
         </div>
       </template>
     </div>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
 
     <script>
       function taskViewer() {
@@ -113,7 +144,6 @@
                   return response.json();
                 })
                 .then((data) => {
-                  console.log("Tasks loaded:", data);
                   this.sections = data;
                   this.saveToLocalStorage();
                   this.loaded = true;
@@ -131,6 +161,25 @@
             return marked.parse(content);
           },
 
+          initializeEditor(event, sectionIndex, taskIndex) {
+            const element = event.target;
+            console.log("Initializing editor for", sectionIndex, taskIndex);
+            console.log("Element:", element);
+            const task = this.sections[sectionIndex].tasks[taskIndex];
+            console.log("Task:", task);
+
+            // Check if the editor is already initialized
+            if (!element.simplemde) {
+              const simplemde = new SimpleMDE({ element });
+              element.simplemde = simplemde; // Store the editor instance in the element
+              simplemde.value(task.notes);
+              simplemde.codemirror.on("change", () => {
+                task.notes = simplemde.value();
+                this.saveToLocalStorage();
+              });
+            }
+          },
+
           downloadTasks() {
             const dataStr = JSON.stringify(this.sections, null, 2);
             const blob = new Blob([dataStr], { type: "application/json" });
@@ -142,6 +191,24 @@
             a.click();
             document.body.removeChild(a);
             URL.revokeObjectURL(url);
+          },
+          taskClass(priority) {
+            switch (priority) {
+              case 0:
+                return "bg-red-500";
+              case 1:
+                return "bg-orange-500";
+              case 2:
+                return "bg-yellow-500";
+              case 3:
+                return "bg-green-500";
+              case 4:
+                return "bg-blue-500";
+              case 5:
+                return "bg-gray-500";
+              default:
+                return "bg-gray-500";
+            }
           },
         };
       }

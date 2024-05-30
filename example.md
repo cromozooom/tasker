@@ -16,12 +16,12 @@ their changes in addition to this section.
 
 ## Helpers
 
-- [1] [Colored links]({{< docsref "/helpers/colored-links" >}}) once again have
+- [Colored links]({{< docsref "/helpers/colored-links" >}}) once again have
   `!important` so they work better with our newly added link utilities.
 
 ### Utilities
 
-- [1] Added new `.d-inline-grid` [display
+- Added new `.d-inline-grid` [display
   utility]({{< docsref "/utilities/display" >}}).
 
 ## v5.3.0-alpha2
@@ -31,109 +31,107 @@ changes listed below.
 
 ### CSS variables
 
-- [1] **Removed several** duplicate and unused root CSS variables.
+- **Removed several** duplicate and unused root CSS variables.
 
 ### Color modes
 
-- [1] Dark mode colors are now derived from our theme colors (e.g., `$primary`)
-  in Sass, rather than color specific tints or shades (e.g., `$blue-300`). This
+- Dark mode colors are now derived from our theme colors (e.g., `$primary`) in
+  Sass, rather than color specific tints or shades (e.g., `$blue-300`). This
   allows for a more automated dark mode when customizing the default theme
   colors.
 
-- [1] Added Sass maps for generating theme colors for dark mode text, subtle
+- Added Sass maps for generating theme colors for dark mode text, subtle
   background, and subtle border.
 
-- [1] [Snippet examples]({{< docsref "/examples#snippets" >}}) are now ready for
+- [Snippet examples]({{< docsref "/examples#snippets" >}}) are now ready for
   dark mode with updated markup and reduced custom styles.
 
-- [1] Added `color-scheme: dark` to dark mode CSS to change OS level controls
-  like scrollbars
+- Added `color-scheme: dark` to dark mode CSS to change OS level controls like
+  scrollbars
 
-- [1] Form validation `border-color` and text `color` states now respond to dark
+- Form validation `border-color` and text `color` states now respond to dark
   mode, thanks to new Sass and CSS variables.
 
-- [1] Dropped recently added form control background CSS variables and
-  reassigned the Sass variables to use CSS variables instead. This simplifies
-  the styling across color modes and avoids an issue where form controls in dark
-  mode wouldn't update properly.
+- Dropped recently added form control background CSS variables and reassigned
+  the Sass variables to use CSS variables instead. This simplifies the styling
+  across color modes and avoids an issue where form controls in dark mode
+  wouldn't update properly.
 
-- [1] Our `box-shadow`s will once again always stay dark instead of inverting to
+- Our `box-shadow`s will once again always stay dark instead of inverting to
   white when in dark mode.
 
-- [1] Improved HTML and JavaScript for our color mode toggle script. The
-  selector for changing the active SVG has been improved, and the markup made
-  more accessible with ARIA attributes.
+- Improved HTML and JavaScript for our color mode toggle script. The selector
+  for changing the active SVG has been improved, and the markup made more
+  accessible with ARIA attributes.
 
-- [1] Improved docs code syntax colors and more across light and dark modes.
+- Improved docs code syntax colors and more across light and dark modes.
 
 ### Typography
 
-- [1] We no longer set a color for `$headings-color-dark` or
-  `--bs-heading-color` for dark mode. To avoid several problems of headings
-  within components appearing the wrong color, we've set the Sass variable to
-  `null` and added a `null` check like we use on the default light mode.
+- We no longer set a color for `$headings-color-dark` or `--bs-heading-color`
+  for dark mode. To avoid several problems of headings within components
+  appearing the wrong color, we've set the Sass variable to `null` and added a
+  `null` check like we use on the default light mode.
 
 ### Components
 
-- [1] Cards now have a `color` set on them to improve rendering across color
-  modes.
+- Cards now have a `color` set on them to improve rendering across color modes.
 
-- [1] Added new `.nav-underline` variant for our navigation with a simpler
-  bottom border under the active nav link. [See the docs for an
+- Added new `.nav-underline` variant for our navigation with a simpler bottom
+  border under the active nav link. [See the docs for an
   example.]({{< docsref "/components/navs-tabs#underline" >}})
 
-- [1] Navs now have new `:focus-visible` styles that better match our custom
-  button focus styles.
+- Navs now have new `:focus-visible` styles that better match our custom button
+  focus styles.
 
 ### Helpers
 
-- [1] Added new `.icon-link` helper to quickly place and align Bootstrap Icons
+- Added new `.icon-link` helper to quickly place and align Bootstrap Icons
   alongside a textual link. Icon links support our new link utilities, too.
 
-- [1] Added new focus ring helper for removing the default `outline` and setting
-  a custom `box-shadow` focus ring.
+- Added new focus ring helper for removing the default `outline` and setting a
+  custom `box-shadow` focus ring.
 
 ### Utilities
 
-- [1] Renamed Sass and CSS variables `${color}-text` to `${color}-text-emphasis`
-  to match their associated utilities.
+- Renamed Sass and CSS variables `${color}-text` to `${color}-text-emphasis` to
+  match their associated utilities.
 
-- [1] Added new `.link-body-emphasis` helper alongside our [colored
+- Added new `.link-body-emphasis` helper alongside our [colored
   links]({{< docsref "/helpers/colored-links" >}}). This creates a colored link
   using our color mode responsive emphasis color.
 
-- [1] Added new link utilities for link color opacity, underline offset,
-  underline color, and underline opacity. [Explore the new links
+- Added new link utilities for link color opacity, underline offset, underline
+  color, and underline opacity. [Explore the new links
   utilities.]({{< docsref "/utilities/link" >}})
 
-- [1] CSS variable based `border-width` utilities have been reverted to set
-  their property directly (as was done prior to v5.2.0). This avoids inheritance
+- CSS variable based `border-width` utilities have been reverted to set their
+  property directly (as was done prior to v5.2.0). This avoids inheritance
   issues across nested elements, including tables.
 
-- [1] Added new `.border-black` utility to match our `.text-black` and
-  `.bg-black` utilities.
+- Added new `.border-black` utility to match our `.text-black` and `.bg-black`
+  utilities.
 
-- [1]
-  <span class="badge text-warning-emphasis bg-warning-subtle">Deprecated</span>
+- <span class="badge text-warning-emphasis bg-warning-subtle">Deprecated</span>
   Deprecated the `.text-muted` utility and `$text-muted` Sass variable. It's
   been replaced by `.text-body-secondary` and `$body-secondary-color`.
 
 ### Docs
 
-- [1] Examples are now displayed with the appropriate light or dark color mode
-  as dictated by the setting in our docs. Each example has an individual color
-  mode picker.
+- Examples are now displayed with the appropriate light or dark color mode as
+  dictated by the setting in our docs. Each example has an individual color mode
+  picker.
 
-- [1] Improved included JavaScript for live Toast demo.
+- Improved included JavaScript for live Toast demo.
 
-- [1] Added `twbs/examples` repo contents to the top of the Examples page.
+- Added `twbs/examples` repo contents to the top of the Examples page.
 
 ### Tooling
 
-- [1] Added SCSS testing via True to help test our utilities API and other
+- Added SCSS testing via True to help test our utilities API and other
   customizations.
 
-- [1] Replaced instances of our bootstrap-npm-starter project with the newer and
+- Replaced instances of our bootstrap-npm-starter project with the newer and
   more complete [twbs/examples repo](https://github.com/twbs/examples).
 
 <hr class="mb-4">
@@ -150,36 +148,35 @@ For a complete list of changes,
 Learn more by reading the new [color modes
 documentation]({{< docsref "/customize/color-modes" >}}).
 
-- [1] **Global support for light (default) and dark color modes.** Set color
-  mode globally on the `:root` element, on groups of elements and components
-  with a wrapper class, or directly on components, with
-  `data-bs-theme="light|dark"`. Also included is a new `color-mode()` mixin that
-  can output a ruleset with the `data-bs-theme` selector or a media query,
-  depending on your preference.
+- **Global support for light (default) and dark color modes.** Set color mode
+  globally on the `:root` element, on groups of elements and components with a
+  wrapper class, or directly on components, with `data-bs-theme="light|dark"`.
+  Also included is a new `color-mode()` mixin that can output a ruleset with the
+  `data-bs-theme` selector or a media query, depending on your preference.
 
   <span class="badge text-warning-emphasis bg-warning-subtle">Deprecated</span>
   Color modes replace dark variants for components, so `.btn-close-white`,
   `.carousel-dark`, `.dropdown-menu-dark`, and `.navbar-dark` are deprecated.
 
-- [1] **New extended color system.** We've added new theme colors (but not in
+- **New extended color system.** We've added new theme colors (but not in
   `$theme-colors`) for a more nuanced, system-wide color palette with new
   secondary, tertiary, and emphasis colors for `color` and `background-color`.
   These new colors are available as Sass variables, CSS variables, and
   utilities.
 
-- [1] We've also expanded our theme color Sass variables, CSS variables, and
+- We've also expanded our theme color Sass variables, CSS variables, and
   utilities to include text emphasis, subtle background colors, and subtle
   border colors. These are available as Sass variables, CSS variables, and
   utilities.
 
-- [1] Adds new `_variables-dark.scss` stylesheet to house dark-mode specific
+- Adds new `_variables-dark.scss` stylesheet to house dark-mode specific
   overrides. This stylesheet should be imported immediately after the existing
   `_variables.scss` file in your import stack.
 
   ```diff
   diff --git a/scss/bootstrap.scss b/scss/bootstrap.scss
   index 8f8296def..449d70487 100644
-  --- [1] a/scss/bootstrap.scss
+  --- a/scss/bootstrap.scss
   +++ b/scss/bootstrap.scss
   @@ -6,6 +6,7 @@
    // Configuration
@@ -193,36 +190,36 @@ documentation]({{< docsref "/customize/color-modes" >}}).
 
 ### CSS variables
 
-- [1] Restores CSS variables for breakpoints, though we don't use them in our
-  media queries as they're not supported. However, these can be useful in
-  JS-specific contexts.
+- Restores CSS variables for breakpoints, though we don't use them in our media
+  queries as they're not supported. However, these can be useful in JS-specific
+  contexts.
 
-- [1] Per the color modes update, we've added new utilities for new Sass CSS
+- Per the color modes update, we've added new utilities for new Sass CSS
   variables `secondary` and `tertiary` text and background colors, plus
   `{color}-bg-subtle`, `{color}-border-subtle`, and `{color}-text-emphasis` for
   our theme colors. These new colors are available through Sass and CSS
   variables (but not our color maps) with the express goal of making it easier
   to customize across multiple colors modes like light and dark.
 
-- [1] Adds additional variables for alerts, `.btn-close`, and `.offcanvas`.
+- Adds additional variables for alerts, `.btn-close`, and `.offcanvas`.
 
-- [1] The `--bs-heading-color` variable is back with an update and dark mode
+- The `--bs-heading-color` variable is back with an update and dark mode
   support. First, we now check for a `null` value on the associated Sass
   variable, `$headings-color`, before trying to output the CSS variable, so by
   default it's not present in our compiled CSS. Second, we use the CSS variable
   with a fallback value, `inherit`, allowing the original behavior to persist,
   but also allowing for overrides.
 
-- [1] Converts links to use CSS variables for styling `color`, but not
+- Converts links to use CSS variables for styling `color`, but not
   `text-decoration`. Colors are now set with `--bs-link-color-rgb` and
   `--bs-link-opacity` as `rgba()` color, allowing you to customize the
   translucency with ease. The `a:hover` pseudo-class now overrides
   `--bs-link-color-rgb` instead of explicitly setting the `color` property.
 
-- [1] `--bs-border-width` is now being used in more components for greater
-  control over default global styling.
+- `--bs-border-width` is now being used in more components for greater control
+  over default global styling.
 
-- [1] Adds new root CSS variables for our `box-shadow`s, including
+- Adds new root CSS variables for our `box-shadow`s, including
   `--bs-box-shadow`, `--bs-box-shadow-sm`, `--bs-box-shadow-lg`, and
   `--bs-box-shadow-inset`.
 
@@ -230,44 +227,39 @@ documentation]({{< docsref "/customize/color-modes" >}}).
 
 #### Alert
 
-- [1] Alert variants are now styled via CSS variables.
+- Alert variants are now styled via CSS variables.
 
-- [1]
-  <span class="badge text-warning-emphasis bg-warning-subtle">Deprecated</span>
+- <span class="badge text-warning-emphasis bg-warning-subtle">Deprecated</span>
   The `alert-variant()` mixin is now deprecated. We now [use a Sass
   loop]({{< docsref "/components/alerts#sass-loops" >}}) directly to modify the
   component's default CSS variables for each variant.
 
 #### List group
 
-- [1] List group item variants are now styled via CSS variables.
+- List group item variants are now styled via CSS variables.
 
-- [1]
-  <span class="badge text-warning-emphasis bg-warning-subtle">Deprecated</span>
+- <span class="badge text-warning-emphasis bg-warning-subtle">Deprecated</span>
   The `list-group-item-variant()` mixin is now deprecated. We now [use a Sass
   loop]({{< docsref "/components/list-group#sass-loops" >}}) directly to modify
   the component's default CSS variables for each variant.
 
 #### Dropdowns
 
-- [1]
-  <span class="badge text-warning-emphasis bg-warning-subtle">Deprecated</span>
+- <span class="badge text-warning-emphasis bg-warning-subtle">Deprecated</span>
   The `.dropdown-menu-dark` class has been deprecated and replaced with
   `data-bs-theme="dark"` on the dropdown or any parent element. [See the docs
   for an example.]({{< docsref "/components/dropdowns#dark-dropdowns" >}})
 
 #### Close button
 
-- [1]
-  <span class="badge text-warning-emphasis bg-warning-subtle">Deprecated</span>
+- <span class="badge text-warning-emphasis bg-warning-subtle">Deprecated</span>
   The `.btn-close-white` class has been deprecated and replaced with
   `data-bs-theme="dark"` on the close button or any parent element. [See the
   docs for an example.]({{< docsref "/components/close-button#dark-variant" >}})
 
 #### Navbar
 
-- [1]
-  <span class="badge text-warning-emphasis bg-warning-subtle">Deprecated</span>
+- <span class="badge text-warning-emphasis bg-warning-subtle">Deprecated</span>
   The `.navbar-dark` class has been deprecated and replaced with
   `data-bs-theme="dark"` on the navbar or any parent element. [See the docs for
   updated examples.]({{< docsref "/components/navbar#color-schemes" >}})
@@ -286,7 +278,7 @@ screen readers, note that the legacy progress bar structure will continue to
 work as before.
 
 ```html
-<!-- [1] Previous markup -->
+<!-- Previous markup -->
 <div class="progress">
   <div
     class="progress-bar"
@@ -299,7 +291,7 @@ work as before.
   ></div>
 </div>
 
-<!-- [1] New markup -->
+<!-- New markup -->
 <div
   class="progress"
   role="progressbar"
@@ -317,7 +309,7 @@ We've also introduced a new `.progress-stacked` class to more logically wrap
 into a single stacked progress bar.
 
 ```html
-<!-- [1] Previous markup -->
+<!-- Previous markup -->
 <div class="progress">
   <div
     class="progress-bar"
@@ -348,7 +340,7 @@ into a single stacked progress bar.
   ></div>
 </div>
 
-<!-- [1] New markup -->
+<!-- New markup -->
 <div class="progress-stacked">
   <div
     class="progress"
@@ -388,26 +380,25 @@ into a single stacked progress bar.
 
 ### Forms
 
-- [1] `.form-control` is now styled with CSS variables to support color modes.
-  This includes the addition of two new root CSS variables for the default and
+- `.form-control` is now styled with CSS variables to support color modes. This
+  includes the addition of two new root CSS variables for the default and
   disabled form control backgrounds.
 
-- [1] `.form-check` and `.form-switch` components are now built with CSS
-  variables for setting the `background-image`. The usage here differs from
-  other components in that the various focus, active, etc states for each
-  component aren't set on the base class. Instead, the states override one
-  variable (e.g., `--bs-form-switch-bg`).
+- `.form-check` and `.form-switch` components are now built with CSS variables
+  for setting the `background-image`. The usage here differs from other
+  components in that the various focus, active, etc states for each component
+  aren't set on the base class. Instead, the states override one variable (e.g.,
+  `--bs-form-switch-bg`).
 
-- [1] Floating form labels now have a `background-color` to fix support for
+- Floating form labels now have a `background-color` to fix support for
   `<textarea>` elements. Additional changes have been made to also support
   disabled states and more.
 
-- [1] Fixed display of date and time inputs in WebKit based browsers.
+- Fixed display of date and time inputs in WebKit based browsers.
 
 ### Utilities
 
-- [1]
-  <span class="badge text-warning-emphasis bg-warning-subtle">Deprecated</span>
+- <span class="badge text-warning-emphasis bg-warning-subtle">Deprecated</span>
   `.text-muted` will be replaced by `.text-body-secondary` in v6.
 
   With the addition of the expanded theme colors and variables, the
@@ -415,17 +406,17 @@ into a single stacked progress bar.
   default value has also been reassigned to the new `--bs-secondary-color` CSS
   variable to better support color modes. It will be removed in v6.0.0.
 
-- [1] Adds new `.overflow-x`, `.overflow-y`, and several `.object-fit-*`
-  utilities. _The object-fit property is used to specify how an `<img>` or
-  `<video>` should be resized to fit its container, giving us a responsive
-  alternative to using `background-image` for a resizable fill/fit image._
+- Adds new `.overflow-x`, `.overflow-y`, and several `.object-fit-*` utilities.
+  _The object-fit property is used to specify how an `<img>` or `<video>` should
+  be resized to fit its container, giving us a responsive alternative to using
+  `background-image` for a resizable fill/fit image._
 
-- [1] Adds new `.fw-medium` utility.
+- Adds new `.fw-medium` utility.
 
-- [1] Added new [`.z-*` utilities]({{< docsref "/utilities/z-index" >}}) for
+- Added new [`.z-*` utilities]({{< docsref "/utilities/z-index" >}}) for
   `z-index`.
 
-- [1] [Box shadow utilities]({{< docsref "/utilities/shadows" >}}) (and Sass
+- [Box shadow utilities]({{< docsref "/utilities/shadows" >}}) (and Sass
   variables) have been updated for dark mode. They now use `--bs-body-color-rgb`
   to generate the `rgba()` color values, allowing them to easily adapt to color
   modes based on the specified foreground color.
@@ -482,14 +473,14 @@ import stack. The same applies to Sass maps—you must override the defaults
 before they get used. The following maps have been moved to the new
 `_maps.scss`:
 
-- [1] `$theme-colors-rgb`
-- [1] `$utilities-colors`
-- [1] `$utilities-text`
-- [1] `$utilities-text-colors`
-- [1] `$utilities-bg`
-- [1] `$utilities-bg-colors`
-- [1] `$negative-spacers`
-- [1] `$gutters`
+- `$theme-colors-rgb`
+- `$utilities-colors`
+- `$utilities-text`
+- `$utilities-text-colors`
+- `$utilities-bg`
+- `$utilities-bg-colors`
+- `$negative-spacers`
+- `$gutters`
 
 Your custom Bootstrap CSS builds should now look something like this with a
 separate maps import.
@@ -523,53 +514,52 @@ separate maps import.
 
 ### New utilities
 
-- [1] Expanded [`font-weight`
+- Expanded [`font-weight`
   utilities]({{< docsref "/utilities/text#font-weight-and-italics" >}}) to
   include `.fw-semibold` for semibold fonts.
-- [1] Expanded [`border-radius`
+- Expanded [`border-radius`
   utilities]({{< docsref "/utilities/borders#sizes" >}}) to include two new
   sizes, `.rounded-4` and `.rounded-5`, for more options.
 
 ### Additional changes
 
-- [1] **Introduced new `$enable-container-classes` option. —** Now when opting
-  into the experimental CSS Grid layout, `.container-*` classes will still be
+- **Introduced new `$enable-container-classes` option. —** Now when opting into
+  the experimental CSS Grid layout, `.container-*` classes will still be
   compiled, unless this option is set to `false`. Containers also now keep their
   gutter values.
 
-- [1] **Offcanvas component now has [responsive
+- **Offcanvas component now has [responsive
   variations]({{< docsref "/components/offcanvas#responsive" >}}).** The
   original `.offcanvas` class remains unchanged—it hides content across all
   viewports. To make it responsive, change that `.offcanvas` class to any
   `.offcanvas-{sm|md|lg|xl|xxl}` class.
 
-- [1] **Thicker table dividers are now opt-in. —** We've removed the thicker and
+- **Thicker table dividers are now opt-in. —** We've removed the thicker and
   more difficult to override border between table groups and moved it to an
   optional class you can apply, `.table-group-divider`. [See the table docs for
   an example.]({{< docsref "/content/tables#table-group-dividers" >}})
 
-- [1]
-  **[Scrollspy has been rewritten](https://github.com/twbs/bootstrap/pull/33421)
+- **[Scrollspy has been rewritten](https://github.com/twbs/bootstrap/pull/33421)
   to use the Intersection Observer API**, which means you no longer need
   relative parent wrappers, deprecates `offset` config, and more. Look for your
   Scrollspy implementations to be more accurate and consistent in their nav
   highlighting.
 
-- [1] **Popovers and tooltips now use CSS variables.** Some CSS variables have
-  been updated from their Sass counterparts to reduce the number of variables.
-  As a result, three variables have been deprecated in this release:
+- **Popovers and tooltips now use CSS variables.** Some CSS variables have been
+  updated from their Sass counterparts to reduce the number of variables. As a
+  result, three variables have been deprecated in this release:
   `$popover-arrow-color`, `$popover-arrow-outer-color`, and
   `$tooltip-arrow-color`.
 
-- [1] **Added new `.text-bg-{color}` helpers.** Instead of setting individual
+- **Added new `.text-bg-{color}` helpers.** Instead of setting individual
   `.text-*` and `.bg-*` utilities, you can now use [the `.text-bg-*`
   helpers]({{< docsref "helpers/color-background" >}}) to set a
   `background-color` with contrasting foreground `color`.
 
-- [1] Added `.form-check-reverse` modifier to flip the order of labels and
+- Added `.form-check-reverse` modifier to flip the order of labels and
   associated checkboxes/radios.
 
-- [1] Added [striped columns]({{< docsref "/content/tables#striped-columns" >}})
+- Added [striped columns]({{< docsref "/content/tables#striped-columns" >}})
   support to tables via the new `.table-striped-columns` class.
 
 For a complete list of changes,
@@ -579,58 +569,57 @@ For a complete list of changes,
 
 <hr class="mb-4">
 
-- [1] **Added experimental support for [CSS Grid
+- **Added experimental support for [CSS Grid
   layout]({{< docsref "/layout/css-grid" >}}). —** This is a work in progress,
   and is not yet ready for production use, but you can opt into the new feature
   via Sass. To enable it, disable the default grid, by setting
   `$enable-grid-classes: false` and enable the CSS Grid by setting
   `$enable-cssgrid: true`.
 
-- [1] **Updated navbars to support offcanvas. —** Add [offcanvas drawers in any
+- **Updated navbars to support offcanvas. —** Add [offcanvas drawers in any
   navbar]({{< docsref "/components/navbar#offcanvas" >}}) with the responsive
   `.navbar-expand-*` classes and some offcanvas markup.
 
-- [1] **Added new [placeholder
+- **Added new [placeholder
   component]({{< docsref "/components/placeholders/" >}}). —** Our newest
   component, a way to provide temporary blocks in lieu of real content to help
   indicate that something is still loading in your site or app.
 
-- [1] **Collapse plugin now supports [horizontal
+- **Collapse plugin now supports [horizontal
   collapsing]({{< docsref "/components/collapse#horizontal" >}}). —** Add
   `.collapse-horizontal` to your `.collapse` to collapse the `width` instead of
   the `height`. Avoid browser repainting by setting a `min-height` or `height`.
 
-- [1] **Added new stack and vertical rule helpers. —** Quickly apply multiple
+- **Added new stack and vertical rule helpers. —** Quickly apply multiple
   flexbox properties to quickly create custom layouts with
   [stacks]({{< docsref "/helpers/stacks/" >}}). Choose from horizontal
   (`.hstack`) and vertical (`.vstack`) stacks. Add vertical dividers similar to
   `<hr>` elements with the [new `.vr`
   helpers]({{< docsref "/helpers/vertical-rule/" >}}).
 
-- [1] **Added new global `:root` CSS variables. —** Added several new CSS
-  variables to the `:root` level for controlling `<body>` styles. More are in
-  the works, including across our utilities and components, but for now read up
-  [CSS variables in the Customize
+- **Added new global `:root` CSS variables. —** Added several new CSS variables
+  to the `:root` level for controlling `<body>` styles. More are in the works,
+  including across our utilities and components, but for now read up [CSS
+  variables in the Customize
   section]({{< docsref "/customize/css-variables/" >}}).
 
-- [1] **Overhauled color and background utilities to use CSS variables, and
-  added new [text opacity]({{< docsref "/utilities/text#opacity" >}}) and
-  [background opacity]({{< docsref "/utilities/background#opacity" >}})
-  utilities. —** `.text-*` and `.bg-*` utilities are now built with CSS
-  variables and `rgba()` color values, allowing you to easily customize any
-  utility with new opacity utilities.
+- **Overhauled color and background utilities to use CSS variables, and added
+  new [text opacity]({{< docsref "/utilities/text#opacity" >}}) and [background
+  opacity]({{< docsref "/utilities/background#opacity" >}}) utilities. —**
+  `.text-*` and `.bg-*` utilities are now built with CSS variables and `rgba()`
+  color values, allowing you to easily customize any utility with new opacity
+  utilities.
 
-- [1] **Added new snippet examples based to show how to customize our
-  components. —** Pull ready to use customized components and other common
-  design patterns with our new [Snippets
-  examples]({{< docsref "/examples#snippets" >}}). Includes
-  [footers]({{< docsref "/examples/footers/" >}}),
+- **Added new snippet examples based to show how to customize our components.
+  —** Pull ready to use customized components and other common design patterns
+  with our new [Snippets examples]({{< docsref "/examples#snippets" >}}).
+  Includes [footers]({{< docsref "/examples/footers/" >}}),
   [dropdowns]({{< docsref "/examples/dropdowns/" >}}), [list
   groups]({{< docsref "/examples/list-groups/" >}}), and
   [modals]({{< docsref "/examples/modals/" >}}).
 
-- [1] **Removed unused positioning styles from popovers and tooltips** as these
-  are handled solely by Popper. `$tooltip-margin` has been deprecated and set to
+- **Removed unused positioning styles from popovers and tooltips** as these are
+  handled solely by Popper. `$tooltip-margin` has been deprecated and set to
   `null` in the process.
 
 Want more information?

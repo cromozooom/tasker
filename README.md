@@ -14,7 +14,7 @@ brackets, like below:
 
 Use **Live Server** in VSCode to see the tasks.
 
-The example is from Bootstrap 5.3 Update
+The example is from this README.md
 
 ## 👉 How?
 
@@ -30,7 +30,9 @@ The example is from Bootstrap 5.3 Update
 1. live server the html file
 1. run: npx tailwindcss -i ./src/input.css -o ./src/output.css --watch
 
-## 🎉 Coming soon:
+## Dev status
+
+### Done
 
 - [0] ✅ Add to local storage
 - [0] ✅ Export from local storage
@@ -38,6 +40,9 @@ The example is from Bootstrap 5.3 Update
 - [0] ✅ Edit status
 - [0] ✅ Add notes
 - [0] ✅ Add tailwind
+
+## 🎉 Coming soon:
+
 - [1] Filter tasks
 - [2] Collapsible groups
   - [2] collapse all

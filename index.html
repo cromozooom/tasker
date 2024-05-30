@@ -12,7 +12,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   </head>
-  <body>
+  <body x-data="{ darkMode: false }" class="bg-white dark:bg-gray-950">
     <div x-data="taskViewer()">
       <template x-if="error">
         <p x-text="error" style="color: red"></p>
@@ -25,12 +25,110 @@
         <div>
           <div class="flex justify-between items-center p-2">
             <h1 class="text-xl font-bold">Tasker</h1>
-            <button
-              @click="downloadTasks()"
-              class="p-3 border bg-blue-600 text-white rounded-md"
-            >
-              Export Tasks
-            </button>
+
+            <div class="flex">
+              <button
+                type="button"
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                @click="downloadTasks()"
+              >
+                Export Tasks
+              </button>
+              <button
+                type="button"
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                x-data="{ darkMode: false }"
+                x-init="initDarkMode()"
+                @click="toggleDarkMode()"
+              >
+                Switch theme
+              </button>
+            </div>
+          </div>
+          <div class="mb-4">
+            <div class="mb-2">
+              <strong>Filter by Status:</strong>
+              <button
+                @click="filterStatus = ''; filterTasks();"
+                :class="{'active-filter': filterStatus === ''}"
+                class="p-3 border rounded"
+              >
+                All
+              </button>
+              <button
+                @click="filterStatus = 'Not Started'; filterTasks();"
+                :class="{'active-filter': filterStatus === 'Not Started'}"
+                class="p-3 border rounded"
+              >
+                Not Started
+              </button>
+              <button
+                @click="filterStatus = 'In Progress'; filterTasks();"
+                :class="{'active-filter': filterStatus === 'In Progress'}"
+                class="p-3 border rounded"
+              >
+                In Progress
+              </button>
+              <button
+                @click="filterStatus = 'Completed'; filterTasks();"
+                :class="{'active-filter': filterStatus === 'Completed'}"
+                class="p-3 border rounded"
+              >
+                Completed
+              </button>
+            </div>
+            <div>
+              <strong>Filter by Priority:</strong>
+              <button
+                @click="filterPriority = ''; filterTasks();"
+                :class="{'active-filter': filterPriority === ''}"
+                class="p-3 border rounded"
+              >
+                All
+              </button>
+              <button
+                @click="filterPriority = 0; filterTasks();"
+                :class="{'active-filter': filterPriority === 0}"
+                class="p-3 border rounded"
+              >
+                0
+              </button>
+              <button
+                @click="filterPriority = 1; filterTasks();"
+                :class="{'active-filter': filterPriority === 1}"
+                class="p-3 border rounded"
+              >
+                1
+              </button>
+              <button
+                @click="filterPriority = 2; filterTasks();"
+                :class="{'active-filter': filterPriority === 2}"
+                class="p-3 border rounded"
+              >
+                2
+              </button>
+              <button
+                @click="filterPriority = 3; filterTasks();"
+                :class="{'active-filter': filterPriority === 3}"
+                class="p-3 border rounded"
+              >
+                3
+              </button>
+              <button
+                @click="filterPriority = 4; filterTasks();"
+                :class="{'active-filter': filterPriority === 4}"
+                class="p-3 border rounded"
+              >
+                4
+              </button>
+              <button
+                @click="filterPriority = 5; filterTasks();"
+                :class="{'active-filter': filterPriority === 5}"
+                class="p-3 border rounded"
+              >
+                5
+              </button>
+            </div>
           </div>
           <template
             x-for="(section, sectionIndex) in sections"
@@ -39,52 +137,83 @@
             <template x-if="section.tasks.length">
               <div class="p-3">
                 <div class="flex pb-5">
-                  <h2 x-text="section.title" class="font-bold text-xl"></h2>
+                  <h2
+                    x-text="section.title"
+                    class="font-bold text-xl dark:text-white"
+                  ></h2>
                 </div>
                 <!-- <div x-html="renderMarkdown(section.content)"></div> -->
-                <template
-                  x-for="(task, taskIndex) in section.tasks"
-                  :key="sectionIndex + '-' + taskIndex"
-                >
-                  <div
-                    :class="'task priority-' + task.priority"
-                    class="flex flex-col border-b m-3 py-2"
+                <div class="flex gap-6 flex-col">
+                  <template
+                    x-for="(task, taskIndex) in section.tasks"
+                    :key="sectionIndex + '-' + taskIndex"
                   >
-                    <div class="flex items-start pb-2">
-                      <div>
-                        <span
-                          :class="taskClass(task.priority)"
-                          class="text-white aspect-square w-6 flex justify-center items-center border rounded-full p-1 text-center mr-2"
-                          x-text="task.priority"
-                        ></span>
+                    <div
+                      :class="'task priority-' + task.priority"
+                      class="flex flex-col dark:dark:bg-gray-900 border dark:border-gray-800 p-2 rounded-xl shadow-md dark:shadow-black/70"
+                    >
+                      <div class="flex items-start pb-2">
+                        <div
+                          class="flex dark:bg-gray-800 rounded-full px-2 py-2 gap-3"
+                        >
+                          <span
+                            :class="taskClass(task.priority)"
+                            class="text-white flex justify-center items-center rounded-full text-center px-2"
+                            x-text="task.priority"
+                          ></span>
+                          <span
+                            class="text-white flex justify-center items-center text-center pr-2"
+                            x-text="task.status"
+                          ></span>
+                        </div>
+                        <div class="pt-2 pl-2">
+                          <div
+                            class="dark:text-white"
+                            x-html="renderMarkdown(task.content)"
+                          ></div>
+                        </div>
                       </div>
-                      <div class="pt-1">
-                        <div x-html="renderMarkdown(task.content)"></div>
+
+                      <div class="flex flex-col gap-3">
+                        <div class="flex flex-col">
+                          <label
+                            for="countries"
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                            >Status</label
+                          >
+                          <select
+                            x-model="task.status"
+                            @change="saveToLocalStorage()"
+                            id="status"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                          >
+                            <option value="">Select status</option>
+                            <option value="Not Started">Not Started</option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Completed">Completed</option>
+                          </select>
+                        </div>
+                        <div class="flex flex-col">
+                          <label
+                            for="message"
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                            >Notes:</label
+                          >
+                          <textarea
+                            x-model="task.notes"
+                            :id="'editor-' + sectionIndex + '-' + taskIndex"
+                            x-ref="'editor-' + sectionIndex + '-' + taskIndex"
+                            @click="initializeEditor($event, sectionIndex, taskIndex)"
+                            id="notes"
+                            rows="4"
+                            class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="Leave a comment..."
+                          ></textarea>
+                        </div>
                       </div>
                     </div>
-                    <label
-                      ><strong>Status:</strong>
-                      <select
-                        x-model="task.status"
-                        @change="saveToLocalStorage()"
-                      >
-                        <option value="">Select status</option>
-                        <option value="Not Started">Not Started</option>
-                        <option value="In Progress">In Progress</option>
-                        <option value="Completed">Completed</option>
-                      </select>
-                    </label>
-
-                    <label><strong>Notes:</strong></label>
-                    <!-- <div x-html="renderMarkdown(task.notes)"></div> -->
-                    <textarea
-                      x-model="task.notes"
-                      :id="'editor-' + sectionIndex + '-' + taskIndex"
-                      x-ref="'editor-' + sectionIndex + '-' + taskIndex"
-                      @click="initializeEditor($event, sectionIndex, taskIndex)"
-                    ></textarea>
-                  </div>
-                </template>
+                  </template>
+                </div>
               </div>
             </template>
           </template>
@@ -102,14 +231,19 @@
       function taskViewer() {
         return {
           sections: [],
+          filteredSections: [],
+          filterStatus: "",
+          filterPriority: "",
           loaded: false,
           error: "",
           activeEditor: null,
+
           init() {
             console.log("Fetching tasks...");
             const storedData = localStorage.getItem("tasks");
             if (storedData) {
               this.sections = JSON.parse(storedData);
+              this.filterTasks(); // Apply filters
               this.loaded = true;
             } else {
               fetch("tasks.json")
@@ -124,6 +258,7 @@
                 .then((data) => {
                   this.sections = data;
                   this.saveToLocalStorage();
+                  this.filterTasks(); // Apply filters
                   this.loaded = true;
                 })
                 .catch((error) => {
@@ -183,6 +318,20 @@
             }
           },
 
+          filterTasks() {
+            this.filteredSections = this.sections.map((section) => {
+              const filteredTasks = section.tasks.filter((task) => {
+                const statusMatch =
+                  this.filterStatus === "" || task.status === this.filterStatus;
+                const priorityMatch =
+                  this.filterPriority === "" ||
+                  task.priority === this.filterPriority;
+                return statusMatch && priorityMatch;
+              });
+              return { ...section, tasks: filteredTasks };
+            });
+          },
+
           downloadTasks() {
             const dataStr = JSON.stringify(this.sections, null, 2);
             const blob = new Blob([dataStr], { type: "application/json" });
@@ -194,6 +343,32 @@
             a.click();
             document.body.removeChild(a);
             URL.revokeObjectURL(url);
+          },
+
+          initDarkMode() {
+            // Check for saved preference in local storage
+            const darkModePreference = localStorage.getItem("darkMode");
+            if (darkModePreference) {
+              this.darkMode = darkModePreference === "true";
+            } else {
+              // If no preference, check the system theme
+              this.darkMode =
+                window.matchMedia &&
+                window.matchMedia("(prefers-color-scheme: dark)").matches;
+            }
+            this.applyDarkMode();
+          },
+          toggleDarkMode() {
+            this.darkMode = !this.darkMode;
+            this.applyDarkMode();
+            localStorage.setItem("darkMode", this.darkMode);
+          },
+          applyDarkMode() {
+            if (this.darkMode) {
+              document.documentElement.classList.add("dark");
+            } else {
+              document.documentElement.classList.remove("dark");
+            }
           },
           taskClass(priority) {
             switch (priority) {
@@ -214,6 +389,16 @@
             }
           },
         };
+      }
+    </script>
+    <script>
+      // Add 'dark' class to the HTML element if dark mode is enabled
+      if (
+        localStorage.getItem("darkMode") === "true" ||
+        (!localStorage.getItem("darkMode") &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
       }
     </script>
   </body>

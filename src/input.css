@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.dark .editor-toolbar a {
+  color: white !important;
+}
+.dark .CodeMirror {
+  background: rgb(55 65 81 / var(--tw-bg-opacity));
+  border: 1px solid rgb(75 85 99 / var(--tw-border-opacity));
+}

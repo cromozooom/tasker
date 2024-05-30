@@ -22,6 +22,8 @@
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   </head>
   <body x-data="taskViewer()" class="bg-white dark:bg-gray-950">
+    <!-- Drop Zone -->
+
     <div class="flex justify-center">
       <!-- Trigger -->
 
@@ -130,7 +132,13 @@
       </div>
     </div>
 
-    <div>
+    <div
+      class="drop-zone"
+      @drop.prevent="handleDrop($event)"
+      @dragover.prevent="addDragOverClass()"
+      @dragenter.prevent="addDragOverClass()"
+      @dragleave.prevent="removeDragOverClass()"
+    >
       <template x-if="error">
         <p x-text="error" style="color: red"></p>
       </template>
@@ -300,6 +308,60 @@
                   this.error = "Failed to load tasks: " + error.message;
                 });
             }
+          },
+
+          addDragOverClass() {
+            console.log("addDragOverClass");
+            const dropZone = document.querySelector(".drop-zone");
+            dropZone.classList.add(
+              ...[
+                "outline",
+                "outline-1",
+                "outline-dashed",
+                "outline-offset-[-5px]",
+                "outline-blue-500",
+              ]
+            );
+          },
+
+          removeDragOverClass() {
+            console.log("removeDragOverClass");
+            const dropZone = document.querySelector(".drop-zone");
+            dropZone.classList.remove(
+              ...[
+                "outline",
+                "outline-1",
+                "outline-dashed",
+                "outline-offset-[-5px]",
+                "outline-blue-500",
+              ]
+            );
+          },
+
+          handleDrop(event) {
+            const files = event.dataTransfer.files;
+            if (files.length > 0) {
+              const file = files[0];
+              if (file.type === "application/json") {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                  try {
+                    const json = JSON.parse(e.target.result);
+                    this.sections = json;
+                    this.saveToLocalStorage();
+                    this.loaded = true;
+                    alert("Tasks loaded successfully!");
+                  } catch (error) {
+                    console.error("Failed to parse JSON file:", error);
+                    alert("Failed to parse JSON file.");
+                  }
+                };
+                reader.readAsText(file);
+              } else {
+                alert("Please upload a valid JSON file.");
+              }
+            }
+            this.removeDragOverClass();
           },
 
           openEditor(sectionIndex, taskIndex) {

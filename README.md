@@ -34,22 +34,26 @@ The example is from this README.md
 
 ### 🎉 Done
 
-- [0] ✅ Add to local storage
-- [0] ✅ Export from local storage
-- [0] ✅ Reset local storage
-- [0] ✅ Edit status
-- [0] ✅ Add notes
-- [0] ✅ Add tailwind
+- ✅ Add to local storage
+- ✅ Export from local storage
+- ✅ Reset local storage
+- ✅ Edit status
+- ✅ Add notes
+- ✅ Add tailwind
+- ✅ better UI/UX
+- ✅ Import JSON (drag and drop into the page to load a WIP Project)
 
 ## 📣 Coming soon:
 
 - [1] Filter tasks
-- [2] Collapsible groups
+- [1] Filter tasks
+- [2] Collapsible tasks
+- [2] Collapsible Sections
   - [2] collapse all
   - [2] expand all
 - [3] Make it work on server as an APP
 - [4] Statistics
-- [5] better UI/UX
+- [5] much better UI/UX
 
 ## 👄 Thanks
 

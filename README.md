@@ -37,8 +37,11 @@ The example is from Bootstrap 5.3 Update
 - ✅ Edit status
 - ✅ Add notes
 - ✅ Add tailwind
-- filter tasks
-- make it work on server as an APP
+- Filter tasks
+- Collapsible groups
+  - collapse all
+  - expand all
+- Make it work on server as an APP
 - Statistics
 - better UI/UX
 

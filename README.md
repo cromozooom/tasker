@@ -53,7 +53,7 @@ The example is from this README.md
 - [4] Statistics
 - [5] much better UI/UX
 
-## Nice to have
+## 😢 Nice to have
 
 - [1] enable/disable priorities
 - [2] add multi level items (for now are only 2 levels)

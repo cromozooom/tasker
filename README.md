@@ -43,25 +43,25 @@ The example is from this README.md
 - ✅ Parse tasks from sub list
   - ⚠️ only first and second level items are captured
 
-## 📣 Coming soon:
+## 🔥 To fix fast 🚨
 
 - [0] Filter tasks
+- [1] Collapsible Sections
+
+## 📣 Coming soon:
+
 - [2] Collapsible tasks
-- [2] Collapsible Sections
   - [2] collapse all
   - [2] expand all
 - [4] Statistics
 - [5] much better UI/UX
 
-## 😢 Nice to have
+## 😢 Nice to have:
 
 - [1] enable/disable priorities
+- [2] Fix Modal in dark mode
 - [2] add multi level items (for now are only 2 levels)
 - [3] Make it work on server as an APP
-
-## 🔥 To fix fast 🚨
-
-- [0] Fix Modal in dark mode
 
 ## 👄 Thanks
 

@@ -152,22 +152,26 @@
       </template>
 
       <template x-if="loaded">
-        <div>
-          <div class="flex justify-between items-center p-2">
-            <h1 class="text-xl font-bold">Tasker</h1>
+        <div class="h-full flex flex-col">
+          <div
+            class="flex justify-between items-center py-3 px-4 shadow-md bg-white shadow-black/10 dark:shadow-black dark:bg-gray-900/60"
+          >
+            <h1 class="text-xl font-bold text-gray-700 dark:text-gray-300">
+              ✅ Tasker
+            </h1>
 
-            <div class="flex">
+            <div class="flex items-center gap-3">
               <button
                 x-show="!showIntro"
                 type="button"
-                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
                 @click="downloadTasks()"
               >
                 Export Tasks
               </button>
               <button
                 type="button"
-                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
                 x-data="{ darkMode: false }"
                 x-init="initDarkMode()"
                 @click="toggleDarkMode()"
@@ -177,17 +181,28 @@
             </div>
           </div>
           <template x-if="showIntro">
-            <div class="prose dark:prose-invert mx-auto">
-              <h1>Welcome</h1>
-              <p>
-                <strong> Choose one of the following options: </strong>
-              </p>
-              <ol>
-                <li>
-                  drop a *.md file where you added priorities on list items or
-                </li>
-                <li>drop an exported *.JSON</li>
-              </ol>
+            <div class="flex items-center h-full border">
+              <div class="prose dark:prose-invert mx-auto">
+                <h1 class="font-semibold">Welcome to Tasker</h1>
+                <hr />
+                <p class="text-2xl">
+                  <strong> Convert markdown file into tasks </strong>
+                </p>
+                <p>
+                  <strong> Choose one of the following options: </strong>
+                </p>
+                <ol>
+                  <li>
+                    drop a
+                    <strong class="underline"> *.md file </strong>
+                    where you added priorities on list items or
+                  </li>
+                  <li>
+                    drop an
+                    <strong class="underline"> exported *.JSON </strong>
+                  </li>
+                </ol>
+              </div>
             </div>
           </template>
 
@@ -200,7 +215,7 @@
                 <div class="flex pb-5 justify-between">
                   <h2
                     x-text="section.title"
-                    class="font-bold text-xl dark:text-white"
+                    class="font-bold text-xl text-gray-700 dark:text-white"
                   ></h2>
                   <div>
                     <span
@@ -224,20 +239,20 @@
                   >
                     <div
                       :class="'task priority-' + task.priority"
-                      class="flex flex-col dark:dark:bg-gray-900 border dark:border-gray-800 p-2 rounded-xl shadow-md dark:shadow-black/70"
+                      class="flex flex-col dark:dark:bg-gray-900 border dark:border-gray-800 p-2 rounded-md shadow-md dark:shadow-black/70"
                     >
                       <div class="flex items-start justify-between pb-2">
                         <div class="flex items-start">
                           <div
-                            class="flex dark:bg-gray-800 rounded-full px-2 py-2 gap-3"
+                            class="flex bg-gray-200/50 dark:bg-gray-800 rounded-full px-2 py-2 gap-3"
                           >
                             <span
                               :class="taskClass(task.priority)"
-                              class="text-white flex justify-center items-center rounded-full text-center px-2"
+                              class="flex justify-center items-center rounded-full text-center px-2"
                               x-text="task.priority"
                             ></span>
                             <span
-                              class="text-white flex justify-center items-center text-center pr-2"
+                              class="dark:text-white flex justify-center items-center text-center pr-2"
                               x-text="task.status"
                             ></span>
                           </div>
@@ -564,19 +579,19 @@
           taskClass(priority) {
             switch (priority) {
               case 0:
-                return "bg-red-500";
+                return "bg-red-600 text-red-50";
               case 1:
-                return "bg-orange-500";
+                return "bg-orange-600 text-orange-100";
               case 2:
-                return "bg-yellow-500";
+                return "bg-orange-400 text-orange-50";
               case 3:
-                return "bg-green-500";
+                return "bg-orange-200 text-orange-800";
               case 4:
-                return "bg-blue-500";
+                return "bg-green-300 text-green-800";
               case 5:
-                return "bg-gray-500";
+                return "bg-green-200 text-green-800";
               default:
-                return "bg-gray-500";
+                return "bg-green-500";
             }
           },
         };

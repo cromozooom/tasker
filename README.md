@@ -46,7 +46,7 @@ The example is from this README.md
 ## 📣 Coming soon:
 
 - [0] Filter tasks
-- [2] enable/disable priorities
+- [1] enable/disable priorities
 - [2] Collapsible tasks
 - [2] Collapsible Sections
   - [2] collapse all

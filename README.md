@@ -45,7 +45,7 @@ The example is from this README.md
 
 ## 📣 Coming soon:
 
-- [1] Filter tasks
+- [0] Filter tasks
 - [2] enable/disable priorities
 - [2] Collapsible tasks
 - [2] Collapsible Sections
@@ -57,7 +57,7 @@ The example is from this README.md
 
 ## 🔥 To fix fast 🚨
 
-- [1] Fix light mode
+- [0] Fix light mode
 
 ## 👄 Thanks
 

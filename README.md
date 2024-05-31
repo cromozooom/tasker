@@ -8,7 +8,9 @@ Introducing Tasker, the ultimate solution to streamline your workflow. Tasker ef
 
 Ready to make microtasking easy? Try Tasker now and experience the difference!
 
-![sample of tasks](./src/screenshot.png)
+[![sample of tasks](./src/screenshot.png)](https://youtu.be/oV8gtK-cxoo)
+
+[_check how to video on youtube_](https://youtu.be/oV8gtK-cxoo)
 
 ## 😇 Why?
 

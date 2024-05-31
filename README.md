@@ -1,5 +1,13 @@
 # ✅ TASKER
 
+Simplify your microtasking and boost your productivity with Tasker today.
+
+Microtasking can often be a challenge, but it doesn't have to be.
+
+Introducing Tasker, the ultimate solution to streamline your workflow. Tasker effortlessly converts simple Markdown into a comprehensive task list JSON, allowing you to easily edit and monitor your tasks directly within your repository.
+
+Ready to make microtasking easy? Try Tasker now and experience the difference!
+
 ![sample of tasks](./src/screenshot.png)
 
 ## 😇 Why?

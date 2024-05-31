@@ -45,28 +45,28 @@ The example is from this README.md
 
 ## 🔥 To fix fast 🚨
 
-- [0] Filter tasks
+- [0] ⚠️ Bug wit parrsing the fisrt item in a list if has subitems
+- [1] Filter tasks
 - [1] Collapsible Sections
-- [1] ⚠️ Bug wit parrsing the fisrt item in a list if has subitems
 
 ## 📣 Coming soon:
 
 - [2] Collapsible tasks
   - [2] collapse all
   - [2] expand all
-- [4] Statistics
-- [5] much better UI/UX
+- [3] Statistics
 
 ## 😢 Nice to have:
 
-- [2] the possibility to save in the background the JSON file
-- [1] search
-- [1] enable/disable priorities
-- [2] Fix Modal in dark mode
-- [2] add multi level items (for now are only 2 levels)
+- [3] the possibility to save in the background the JSON file
+- [3] search
+- [3] enable/disable priorities
+- [3] Fix Modal in dark mode
+- [3] add multi level items (for now are only 2 levels)
 - [3] Make it work on server as an APP
 - [4] create a node module
   - [4] so it can be added to any repo and by running a command like "npm tasker" it will convert the README.md and open the tasker in a **localhost**
+- [5] much better UI/UX
 
 ## 👄 Thanks
 

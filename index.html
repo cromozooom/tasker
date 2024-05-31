@@ -492,11 +492,10 @@
 
           parseMarkdownToTasks(markdownContent) {
             const tokens = marked.lexer(markdownContent);
-            console.log("Tokens:", tokens);
             const tasks = [];
             let currentSection = null;
 
-            tokens.forEach((token, index) => {
+            tokens.forEach((token) => {
               if (
                 token.type === "heading" &&
                 token.depth >= 1 &&
@@ -514,27 +513,40 @@
                 if (token.type === "paragraph") {
                   currentSection.content += token.text + "\n";
                 } else if (token.type === "list") {
-                  token.items.forEach((item) => {
-                    const listItemContent = item.text.trim();
-                    const match = listItemContent.match(/^\[(\d+|!)\]\s*(.*)$/);
-                    if (match) {
-                      const priority =
-                        match[1] === "!" ? 1 : parseInt(match[1], 10);
-                      const content = match[2];
-                      currentSection.tasks.push({
-                        content: content,
-                        priority: priority,
-                        status: "Not Started",
-                        notes: "",
-                      });
-                    }
-                  });
+                  this.processListItems(token.items, currentSection.tasks);
                 }
               }
             });
 
-            console.log("Final tasks:", tasks);
             return tasks.filter((section) => section.tasks.length > 0);
+          },
+
+          processListItems(items, tasks) {
+            items.forEach((item) => {
+              if (item.text) {
+                const match = item.text.trim().match(/^\[(\d+|!)\]\s*(.*)$/);
+                if (match) {
+                  const priority =
+                    match[1] === "!" ? 1 : parseInt(match[1], 10);
+                  const content = match[2];
+                  tasks.push({
+                    content: content,
+                    priority: priority,
+                    status: "Not Started",
+                    notes: "",
+                  });
+                }
+              }
+
+              // Handle nested list items
+              if (item.tokens) {
+                item.tokens.forEach((nestedToken) => {
+                  if (nestedToken.type === "list") {
+                    this.processListItems(nestedToken.items, tasks);
+                  }
+                });
+              }
+            });
           },
 
           openEditor(sectionIndex, taskIndex) {

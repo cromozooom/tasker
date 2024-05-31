@@ -66,7 +66,7 @@ The example is from this README.md
 - [2] add multi level items (for now are only 2 levels)
 - [3] Make it work on server as an APP
 - [4] create a node module
-  - [4] so it can be added to any repo and by running a command like "npm tasker it will convert the README.md and open the tasker in a local port
+  - [4] so it can be added to any repo and by running a command like "npm tasker" it will convert the README.md and open the tasker in a **localhost**
 
 ## 👄 Thanks
 

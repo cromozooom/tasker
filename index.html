@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -21,7 +21,11 @@
 
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   </head>
-  <body x-data="taskViewer()" class="bg-white dark:bg-gray-950">
+  <body
+    x-data="taskViewer()"
+    x-init="init()"
+    class="bg-white dark:bg-gray-950 h-full"
+  >
     <!-- Drop Zone -->
 
     <div class="flex justify-center">
@@ -134,6 +138,7 @@
 
     <div
       class="drop-zone"
+      :class="{'h-full outline-1 outline-dashed outline-offset-[-5px] outline-blue-500' : showIntro} "
       @drop.prevent="handleDrop($event)"
       @dragover.prevent="addDragOverClass()"
       @dragenter.prevent="addDragOverClass()"
@@ -153,6 +158,7 @@
 
             <div class="flex">
               <button
+                x-show="!showIntro"
                 type="button"
                 class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
                 @click="downloadTasks()"
@@ -170,6 +176,20 @@
               </button>
             </div>
           </div>
+          <template x-if="showIntro">
+            <div class="prose dark:prose-invert mx-auto">
+              <h1>Welcome</h1>
+              <p>
+                <strong> Choose one of the following options: </strong>
+              </p>
+              <ol>
+                <li>
+                  drop a *.md file where you added priorities on list items or
+                </li>
+                <li>drop an exported *.JSON</li>
+              </ol>
+            </div>
+          </template>
 
           <template
             x-for="(section, sectionIndex) in sections"
@@ -279,34 +299,37 @@
           editSectionIndex: null,
           editTaskIndex: null,
           modalTask: {},
+          showIntro: false,
 
           init() {
             console.log("Fetching tasks...");
             const storedData = localStorage.getItem("tasks");
             if (storedData) {
               this.sections = JSON.parse(storedData);
-
               this.loaded = true;
             } else {
-              fetch("tasks.json")
-                .then((response) => {
-                  if (!response.ok) {
-                    throw new Error(
-                      "Network response was not ok: " + response.statusText
-                    );
-                  }
-                  return response.json();
-                })
-                .then((data) => {
-                  this.sections = data;
-                  this.saveToLocalStorage();
+              this.showIntro = true;
+              this.loaded = true;
 
-                  this.loaded = true;
-                })
-                .catch((error) => {
-                  console.error("Failed to load tasks:", error);
-                  this.error = "Failed to load tasks: " + error.message;
-                });
+              // fetch("tasks.json")
+              //   .then((response) => {
+              //     if (!response.ok) {
+              //       throw new Error(
+              //         "Network response was not ok: " + response.statusText
+              //       );
+              //     }
+              //     return response.json();
+              //   })
+              //   .then((data) => {
+              //     this.sections = data;
+              //     this.saveToLocalStorage();
+
+              //     this.loaded = true;
+              //   })
+              //   .catch((error) => {
+              //     console.error("Failed to load tasks:", error);
+              //     this.error = "Failed to load tasks: " + error.message;
+              //   });
             }
           },
 
@@ -339,29 +362,103 @@
           },
 
           handleDrop(event) {
+            console.log("File dropped");
             const files = event.dataTransfer.files;
             if (files.length > 0) {
               const file = files[0];
-              if (file.type === "application/json") {
-                const reader = new FileReader();
-                reader.onload = (e) => {
-                  try {
-                    const json = JSON.parse(e.target.result);
-                    this.sections = json;
-                    this.saveToLocalStorage();
-                    this.loaded = true;
-                    alert("Tasks loaded successfully!");
-                  } catch (error) {
-                    console.error("Failed to parse JSON file:", error);
-                    alert("Failed to parse JSON file.");
-                  }
-                };
-                reader.readAsText(file);
+              const fileExtension = file.name.split(".").pop().toLowerCase();
+
+              if (fileExtension === "md") {
+                this.readMarkdownFile(file);
+              } else if (fileExtension === "json") {
+                this.readJsonFile(file);
               } else {
-                alert("Please upload a valid JSON file.");
+                alert(
+                  "Please upload a valid Markdown (.md) or JSON (.json) file."
+                );
               }
             }
             this.removeDragOverClass();
+            this.showIntro = false;
+          },
+
+          readMarkdownFile(file) {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+              const markdownContent = e.target.result;
+              console.log("Markdown content:", markdownContent);
+              const tasks = this.parseMarkdownToTasks(markdownContent);
+              console.log("Parsed tasks:", tasks);
+              this.sections = tasks;
+              this.saveToLocalStorage();
+              this.loaded = true;
+              alert("Tasks loaded successfully from Markdown!");
+            };
+            reader.readAsText(file);
+          },
+
+          readJsonFile(file) {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+              try {
+                const json = JSON.parse(e.target.result);
+                this.sections = json;
+                this.saveToLocalStorage();
+                this.loaded = true;
+                alert("Tasks loaded successfully from JSON!");
+              } catch (error) {
+                console.error("Failed to parse JSON file:", error);
+                alert("Failed to parse JSON file.");
+              }
+            };
+            reader.readAsText(file);
+          },
+
+          parseMarkdownToTasks(markdownContent) {
+            const tokens = marked.lexer(markdownContent);
+            console.log("Tokens:", tokens);
+            const tasks = [];
+            let currentSection = null;
+
+            tokens.forEach((token, index) => {
+              if (
+                token.type === "heading" &&
+                token.depth >= 1 &&
+                token.depth <= 6
+              ) {
+                currentSection = {
+                  title: token.text,
+                  content: "",
+                  tasks: [],
+                };
+                tasks.push(currentSection);
+              }
+
+              if (currentSection) {
+                if (token.type === "paragraph") {
+                  currentSection.content += token.text + "\n";
+                } else if (token.type === "list") {
+                  token.items.forEach((item) => {
+                    const listItemContent = item.text.trim();
+                    const match = listItemContent.match(/^\[(\d+|!)\]\s*(.*)$/);
+                    if (match) {
+                      const priority =
+                        match[1] === "!" ? 1 : parseInt(match[1], 10);
+                      const content = match[2];
+                      currentSection.tasks.push({
+                        content: content,
+                        priority: priority,
+                        status: "Not Started",
+                        notes: "",
+                      });
+                    }
+                  });
+                }
+              }
+            });
+
+            console.log("Final tasks:", tasks);
+            return tasks.filter((section) => section.tasks.length > 0);
           },
 
           openEditor(sectionIndex, taskIndex) {

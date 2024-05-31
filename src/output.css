@@ -2105,6 +2105,10 @@ select {
   height: 1rem;
 }
 
+.h-full {
+  height: 100%;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -3929,10 +3933,6 @@ select {
 
 .outline-1 {
   outline-width: 1px;
-}
-
-.outline-offset-\[-3px\] {
-  outline-offset: -3px;
 }
 
 .outline-offset-\[-5px\] {

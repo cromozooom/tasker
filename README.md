@@ -46,7 +46,7 @@ The example is from this README.md
 ## 📣 Coming soon:
 
 - [1] Filter tasks
-- [1] Filter tasks
+- [2] enable/disable priorities
 - [2] Collapsible tasks
 - [2] Collapsible Sections
   - [2] collapse all
@@ -54,6 +54,10 @@ The example is from this README.md
 - [3] Make it work on server as an APP
 - [4] Statistics
 - [5] much better UI/UX
+
+## 🔥 To fix fast 🚨
+
+- [1] Fix light mode
 
 ## 👄 Thanks
 

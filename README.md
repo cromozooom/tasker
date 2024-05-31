@@ -42,6 +42,7 @@ The example is from this README.md
 - ✅ Add tailwind
 - ✅ better UI/UX
 - ✅ Import JSON (drag and drop into the page to load a WIP Project)
+- ✅ Fix light mode
 
 ## 📣 Coming soon:
 
@@ -57,7 +58,7 @@ The example is from this README.md
 
 ## 🔥 To fix fast 🚨
 
-- [0] Fix light mode
+- [0] Fix Modal in dark mode
 
 ## 👄 Thanks
 

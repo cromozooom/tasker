@@ -58,6 +58,7 @@ The example is from this README.md
 
 ## 😢 Nice to have:
 
+- [1] search
 - [1] enable/disable priorities
 - [2] Fix Modal in dark mode
 - [2] add multi level items (for now are only 2 levels)

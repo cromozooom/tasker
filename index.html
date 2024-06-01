@@ -248,46 +248,78 @@
             </div>
           </div>
 
-          <div class="flex gap-3 px-3 py-3 border-b dark:border-b-gray-900">
+          <div class="flex items-center gap-3 px-3 mb-4">
             <div>
               <label
-                for="filterPriority"
-                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
                 >Priority</label
               >
-              <select
-                id="filterPriority"
-                x-model="filterPriority"
-                @change="filterTasks()"
-                class="bg-gray-50 xmin-w-8 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-2 pl-2 pe-10 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              >
-                <option value="">All</option>
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-              </select>
+              <div class="flex flex-wrap">
+                <template
+                  x-for="(priority, index) in uniquePriorities"
+                  :key="priority"
+                >
+                  <div>
+                    <input
+                      type="checkbox"
+                      :value="priority"
+                      @change="toggleFilter(filterPriority, priority)"
+                      class="hidden"
+                      :id="'priority-' + priority"
+                    />
+                    <label
+                      :for="'priority-' + priority"
+                      :class="{
+                        'bg-blue-600 text-white': filterPriority.includes(priority),
+                        'bg-gray-200 text-gray-800': !filterPriority.includes(priority),
+                        'rounded-l-lg': index === 0,
+                        'rounded-r-lg': index === uniquePriorities.length - 1
+                      }"
+                      class="px-3 py-2 cursor-pointer transition-colors duration-300 border border-gray-300"
+                    >
+                      <span
+                        x-text="`${priority} (${filteredPriorityCounts[priority] || 0})`"
+                      ></span>
+                    </label>
+                  </div>
+                </template>
+              </div>
             </div>
             <div>
               <label
-                for="filterStatus"
-                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
                 >Status</label
               >
-              <select
-                id="filterStatus"
-                x-model="filterStatus"
-                @change="filterTasks()"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-2 pl-2 pe-10 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              >
-                <option value="">All</option>
-                <option value="Not Started">Not Started</option>
-                <option value="In Progress">In Progress</option>
-                <option value="Block">Block</option>
-                <option value="Completed">Completed</option>
-              </select>
+              <div class="flex flex-wrap">
+                <template
+                  x-for="(status, index) in uniqueStatuses"
+                  :key="status"
+                >
+                  <div>
+                    <input
+                      type="checkbox"
+                      :value="status"
+                      @change="toggleFilter(filterStatus, status)"
+                      class="hidden"
+                      :id="'status-' + status"
+                    />
+                    <label
+                      :for="'status-' + status"
+                      :class="{
+                        'bg-blue-600 text-white': filterStatus.includes(status),
+                        'bg-gray-200 text-gray-800': !filterStatus.includes(status),
+                        'rounded-l-lg': index === 0,
+                        'rounded-r-lg': index === uniqueStatuses.length - 1
+                      }"
+                      class="px-3 py-2 cursor-pointer transition-colors duration-300 border border-gray-300"
+                    >
+                      <span
+                        x-text="`${status} (${filteredStatusCounts[status] || 0})`"
+                      ></span>
+                    </label>
+                  </div>
+                </template>
+              </div>
             </div>
           </div>
 
@@ -445,63 +477,36 @@
           darkMode: false,
           sections: [],
           filteredSections: [],
-          filterStatus: "",
-          filterPriority: "",
+          filterStatus: [],
+          filterPriority: [],
           loaded: false,
           error: "",
           activeEditor: null,
-
           openEditTask: false,
           editSectionIndex: null,
           editTaskIndex: null,
           modalTask: {},
           showIntro: false,
 
+          uniquePriorities: [],
+          uniqueStatuses: [],
+          priorityCounts: {},
+          statusCounts: {},
+          filteredPriorityCounts: {},
+          filteredStatusCounts: {},
+
           init() {
             console.log("Fetching tasks...");
             const storedData = localStorage.getItem("tasks");
             if (storedData) {
               this.sections = JSON.parse(storedData);
+              this.calculateUniqueValues();
               this.filterTasks();
               this.loaded = true;
             } else {
               this.showIntro = true;
               this.loaded = true;
-
-              // fetch("tasks.json")
-              //   .then((response) => {
-              //     if (!response.ok) {
-              //       throw new Error(
-              //         "Network response was not ok: " + response.statusText
-              //       );
-              //     }
-              //     return response.json();
-              //   })
-              //   .then((data) => {
-              //     this.sections = data;
-              //     this.saveToLocalStorage();
-
-              //     this.loaded = true;
-              //   })
-              //   .catch((error) => {
-              //     console.error("Failed to load tasks:", error);
-              //     this.error = "Failed to load tasks: " + error.message;
-              //   });
             }
-          },
-
-          filterTasks() {
-            this.filteredSections = this.sections.map((section) => {
-              const filteredTasks = section.tasks.filter((task) => {
-                const statusMatch =
-                  this.filterStatus === "" || task.status === this.filterStatus;
-                const priorityMatch =
-                  this.filterPriority === "" ||
-                  task.priority == this.filterPriority;
-                return statusMatch && priorityMatch;
-              });
-              return { ...section, tasks: filteredTasks };
-            });
           },
 
           addDragOverClass() {
@@ -561,7 +566,9 @@
               const tasks = this.parseMarkdownToTasks(markdownContent);
               console.log("Parsed tasks:", tasks);
               this.sections = tasks;
+              this.calculateUniqueValues();
               this.saveToLocalStorage();
+              this.filterTasks();
               this.loaded = true;
               alert("Tasks loaded successfully from Markdown!");
             };
@@ -574,7 +581,9 @@
               try {
                 const json = JSON.parse(e.target.result);
                 this.sections = json;
+                this.calculateUniqueValues();
                 this.saveToLocalStorage();
+                this.filterTasks();
                 this.loaded = true;
                 alert("Tasks loaded successfully from JSON!");
               } catch (error) {
@@ -644,6 +653,73 @@
             });
           },
 
+          calculateUniqueValues() {
+            const priorities = new Set();
+            const statuses = new Set();
+            const priorityCount = {};
+            const statusCount = {};
+
+            this.sections.forEach((section) => {
+              section.tasks.forEach((task) => {
+                priorities.add(task.priority);
+                statuses.add(task.status);
+
+                if (!priorityCount[task.priority]) {
+                  priorityCount[task.priority] = 0;
+                }
+                priorityCount[task.priority]++;
+
+                if (!statusCount[task.status]) {
+                  statusCount[task.status] = 0;
+                }
+                statusCount[task.status]++;
+              });
+            });
+
+            this.uniquePriorities = Array.from(priorities).sort(
+              (a, b) => a - b
+            );
+            this.uniqueStatuses = Array.from(statuses);
+            this.priorityCounts = priorityCount;
+            this.statusCounts = statusCount;
+            this.filteredPriorityCounts = { ...priorityCount };
+            this.filteredStatusCounts = { ...statusCount };
+          },
+
+          toggleFilter(filterArray, value) {
+            const index = filterArray.indexOf(value);
+            if (index === -1) {
+              filterArray.push(value);
+            } else {
+              filterArray.splice(index, 1);
+            }
+            this.filterTasks();
+          },
+
+          filterTasks() {
+            this.filteredPriorityCounts = {};
+            this.filteredStatusCounts = {};
+
+            this.filteredSections = this.sections.map((section) => {
+              const filteredTasks = section.tasks.filter((task) => {
+                const statusMatch =
+                  this.filterStatus.length === 0 ||
+                  this.filterStatus.includes(task.status);
+                const priorityMatch =
+                  this.filterPriority.length === 0 ||
+                  this.filterPriority.includes(task.priority);
+                if (statusMatch && priorityMatch) {
+                  this.filteredPriorityCounts[task.priority] =
+                    (this.filteredPriorityCounts[task.priority] || 0) + 1;
+                  this.filteredStatusCounts[task.status] =
+                    (this.filteredStatusCounts[task.status] || 0) + 1;
+                }
+                return statusMatch && priorityMatch;
+              });
+              return { ...section, tasks: filteredTasks };
+            });
+          },
+
           openEditor(sectionIndex, taskIndex) {
             console.log(sectionIndex, taskIndex);
             this.openEditTask = true;
@@ -701,11 +777,14 @@
               this.closeEditor();
             }
             console.log(this.sections);
-          },
-          saveToLocalStorage() {
-            localStorage.setItem("tasks", JSON.stringify(this.sections));
+            this.calculateUniqueValues();
             this.filterTasks();
           },
+
+          saveToLocalStorage() {
+            localStorage.setItem("tasks", JSON.stringify(this.sections));
+          },
+
           renderMarkdown(content) {
             return marked.parse(content);
           },
@@ -736,11 +815,13 @@
             }
             this.applyDarkMode();
           },
+
           toggleDarkMode() {
             this.darkMode = !this.darkMode;
             this.applyDarkMode();
             localStorage.setItem("darkMode", this.darkMode);
           },
+
           applyDarkMode() {
             if (this.darkMode) {
               document.documentElement.classList.add("dark");

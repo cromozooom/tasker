@@ -4,7 +4,10 @@ Simplify your microtasking and boost your productivity with Tasker today.
 
 Microtasking can often be a challenge, but it doesn't have to be.
 
-Introducing Tasker, the ultimate solution to streamline your workflow. Tasker effortlessly converts simple Markdown into a comprehensive task list JSON, allowing you to easily edit and monitor your tasks directly within your repository.
+Introducing Tasker, the ultimate solution to streamline your workflow. Tasker
+effortlessly converts simple Markdown into a comprehensive task list JSON,
+allowing you to easily edit and monitor your tasks directly within your
+repository.
 
 Ready to make microtasking easy? Try Tasker now and experience the difference!
 
@@ -59,7 +62,7 @@ The example is from this README.md
 
 ## 🔥 To fix fast 🚨
 
-- [0] ⚠️ Bug wit parrsing the fisrt item in a list if has subitems
+- [0] ⚠️ Bug wit parsing the first item in a list if has subitems
 - [1] Filter tasks
 - [1] Collapsible Sections
 
@@ -79,7 +82,8 @@ The example is from this README.md
 - [3] add multi level items (for now are only 2 levels)
 - [3] Make it work on server as an APP
 - [4] create a node module
-  - [4] so it can be added to any repo and by running a command like "npm tasker" it will convert the README.md and open the tasker in a **localhost**
+  - [4] so it can be added to any repo and by running a command like "npm
+    tasker" it will convert the README.md and open the tasker in a **localhost**
 - [5] much better UI/UX
 
 ## 👄 Thanks

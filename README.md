@@ -57,21 +57,21 @@ The example is from this README.md
 - ✅ better UI/UX
 - ✅ Import JSON (drag and drop into the page to load a WIP Project)
 - ✅ Fix light mode
+- ✅ Filter tasks
+- ✅ Statistics
 - ✅ Parse tasks from sub list
   - ⚠️ only first and second level items are captured
 
 ## 🔥 To fix fast 🚨
 
 - [0] ⚠️ Bug wit parsing the first item in a list if has subitems
-- [1] Filter tasks
-- [1] Collapsible Sections
 
 ## 📣 Coming soon:
 
-- [2] Collapsible tasks
-  - [2] collapse all
-  - [2] expand all
-- [3] Statistics
+- [1] Collapsible Sections
+- [3] Collapsible tasks
+  - [3] collapse all
+  - [3] expand all
 
 ## 😢 Nice to have:
 

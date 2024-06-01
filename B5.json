@@ -1,0 +1,614 @@
+[
+  {
+    "title": "Sass",
+    "content": "",
+    "tasks": [
+      {
+        "content": "Renamed `color-yiq()` function and related variables to `color-contrast()` as it's no longer related to YIQ color space. [See #30168.](https://github.com/twbs/bootstrap/pull/30168/)",
+        "priority": 1,
+        "status": "Completed",
+        "notes": ""
+      },
+      {
+        "content": "`$yiq-contrasted-threshold` is renamed to `$min-contrast-ratio`.",
+        "priority": 0,
+        "status": "Completed",
+        "notes": ""
+      },
+      {
+        "content": "`$yiq-text-dark` and `$yiq-text-light` are respectively renamed to `$color-contrast-dark` and `$color-contrast-light`.",
+        "priority": 0,
+        "status": "Completed",
+        "notes": ""
+      },
+      {
+        "content": "Media query mixins parameters have changed for a more logical approach.",
+        "priority": 1,
+        "status": "Block",
+        "notes": "Latter"
+      },
+      {
+        "content": "`media-breakpoint-down()` uses the breakpoint itself instead of the next breakpoint (e.g., `media-breakpoint-down(lg)` instead of `media-breakpoint-down(md)` targets viewports smaller than `lg`).",
+        "priority": 0,
+        "status": "Block",
+        "notes": "Latter"
+      },
+      {
+        "content": "Similarly, the second parameter in `media-breakpoint-between()` also uses the breakpoint itself instead of the next breakpoint (e.g., `media-breakpoint-between(sm, lg)` instead of `media-breakpoint-between(sm, md)` targets viewports between `sm` and `lg`).",
+        "priority": 0,
+        "status": "Block",
+        "notes": ""
+      },
+      {
+        "content": "Removed print styles and `$enable-print-styles` variable. Print display classes are still around. [See #28339](https://github.com/twbs/bootstrap/pull/28339).",
+        "priority": 1,
+        "status": "Completed",
+        "notes": ""
+      },
+      {
+        "content": "Dropped `color()`, `theme-color()`, and `gray()` functions in favor of variables. [See #29083](https://github.com/twbs/bootstrap/pull/29083).",
+        "priority": 1,
+        "status": "Completed",
+        "notes": ""
+      },
+      {
+        "content": "Renamed `theme-color-level()` function to `color-level()` and now accepts any color you want instead of only `$theme-color` colors. [See #29083](https://github.com/twbs/bootstrap/pull/29083) **Watch out:** `color-level()` was later on dropped in `v5.0.0-alpha3`.",
+        "priority": 1,
+        "status": "Completed",
+        "notes": ""
+      },
+      {
+        "content": "Renamed `$enable-prefers-reduced-motion-media-query` and `$enable-pointer-cursor-for-buttons` to `$enable-reduced-motion` and `$enable-button-pointers` for brevity.",
+        "priority": 1,
+        "status": "Completed",
+        "notes": ""
+      },
+      {
+        "content": "Removed the `bg-gradient-variant()` mixin. Use the `.bg-gradient` class to add gradients to elements instead of the generated `.bg-gradient-*` classes.",
+        "priority": 1,
+        "status": "Completed",
+        "notes": "not used"
+      },
+      {
+        "content": "**Removed previously deprecated mixins:**",
+        "priority": 1,
+        "status": "Block",
+        "notes": ""
+      },
+      {
+        "content": "`hover`, `hover-focus`, `plain-hover-focus`, and `hover-focus-active`",
+        "priority": 0,
+        "status": "Block",
+        "notes": ""
+      },
+      {
+        "content": "`float()`",
+        "priority": 0,
+        "status": "Completed",
+        "notes": ""
+      },
+      {
+        "content": "`form-control-mixin()`",
+        "priority": 0,
+        "status": "Completed",
+        "notes": ""
+      },
+      {
+        "content": "`nav-divider()`",
+        "priority": 0,
+        "status": "Completed",
+        "notes": ""
+      },
+      {
+        "content": "`retina-img()`",
+        "priority": 0,
+        "status": "Completed",
+        "notes": ""
+      },
+      {
+        "content": "`text-hide()` (also dropped the associated utility class, `.text-hide`)",
+        "priority": 0,
+        "status": "Completed",
+        "notes": ""
+      },
+      {
+        "content": "`visibility()`",
+        "priority": 0,
+        "status": "Not Started",
+        "notes": ""
+      },
+      {
+        "content": "`form-control-focus()`",
+        "priority": 0,
+        "status": "Not Started",
+        "notes": ""
+      },
+      {
+        "content": "Renamed `scale-color()` function to `shift-color()` to avoid collision with Sass's own color scaling function.",
+        "priority": 1,
+        "status": "Not Started",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "title": "Grid updates",
+    "content": "",
+    "tasks": [
+      {
+        "content": "Renamed `.no-gutters` to `.g-0` to match new gutter utilities.",
+        "priority": 1,
+        "status": "Not Started",
+        "notes": ""
+      },
+      {
+        "content": "Dropped several `.order-*` classes that often went unused. We now only provide `.order-1` to `.order-5` out of the box.",
+        "priority": 1,
+        "status": "Not Started",
+        "notes": ""
+      },
+      {
+        "content": "Dropped the `.media` component as it can be easily replicated with utilities. [See #28265](https://github.com/twbs/bootstrap/pull/28265) and the [flex utilities page for an example]({{< docsref \"/utilities/flex#media-object\" >}}).",
+        "priority": 1,
+        "status": "Not Started",
+        "notes": ""
+      },
+      {
+        "content": "`bootstrap-grid.css` now only applies `box-sizing: border-box` to the column instead of resetting the global box-sizing. This way, our grid styles can be used in more places without interference.",
+        "priority": 1,
+        "status": "Not Started",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "title": "Content, Reboot, etc",
+    "content": "",
+    "tasks": [
+      {
+        "content": "Overhauled our display typography to replace our `$display-*` variables and with a `$display-font-sizes` Sass map. Also removed the individual `$display-*-weight` variables for a single `$display-font-weight` and adjusted `font-size`s.",
+        "priority": 1,
+        "status": "Not Started",
+        "notes": ""
+      },
+      {
+        "content": "Nested tables do not inherit styles anymore.",
+        "priority": 1,
+        "status": "Not Started",
+        "notes": ""
+      },
+      {
+        "content": "`.thead-light` and `.thead-dark` are dropped in favor of the `.table-*` variant classes which can be used for all table elements (`thead`, `tbody`, `tfoot`, `tr`, `th` and `td`).",
+        "priority": 1,
+        "status": "Not Started",
+        "notes": ""
+      },
+      {
+        "content": "The `table-row-variant()` mixin is renamed to `table-variant()` and accepts only 2 parameters: `$color` (color name) and `$value` (color code). The border color and accent colors are automatically calculated based on the table factor variables.",
+        "priority": 1,
+        "status": "Not Started",
+        "notes": ""
+      },
+      {
+        "content": "Dropped `.pre-scrollable` class. [See #29135](https://github.com/twbs/bootstrap/pull/29135)",
+        "priority": 1,
+        "status": "Not Started",
+        "notes": ""
+      },
+      {
+        "content": "`.text-*` utilities do not add hover and focus states to links anymore. `.link-*` helper classes can be used instead. [See #29267](https://github.com/twbs/bootstrap/pull/29267)",
+        "priority": 1,
+        "status": "Not Started",
+        "notes": ""
+      },
+      {
+        "content": "Dropped `.text-justify` class. [See #29793](https://github.com/twbs/bootstrap/pull/29793)",
+        "priority": 1,
+        "status": "Not Started",
+        "notes": ""
+      },
+      {
+        "content": "~~`<hr>` elements now use `height` instead of `border` to better support the `size` attribute. This also enables use of padding utilities to create thicker dividers (e.g., `<hr class=\"py-1\">`).~~",
+        "priority": 1,
+        "status": "Not Started",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "title": "Forms",
+    "content": "",
+    "tasks": [
+      {
+        "content": "**Consolidated native and custom form elements.** Checkboxes, radios, selects, and other inputs that had native and custom classes in v4 have been consolidated. Now nearly all our form elements are entirely custom, most without the need for custom HTML.",
+        "priority": 1,
+        "status": "Not Started",
+        "notes": ""
+      },
+      {
+        "content": "`.custom-control.custom-checkbox` is now `.form-check`.",
+        "priority": 0,
+        "status": "Not Started",
+        "notes": ""
+      },
+      {
+        "content": "`.custom-control.custom-radio` is now `.form-check`.",
+        "priority": 0,
+        "status": "Not Started",
+        "notes": ""
+      },
+      {
+        "content": "`.custom-control.custom-switch` is now `.form-check.form-switch`.",
+        "priority": 0,
+        "status": "Not Started",
+        "notes": ""
+      },
+      {
+        "content": "`.custom-select` is now `.form-select`.",
+        "priority": 0,
+        "status": "Not Started",
+        "notes": ""
+      },
+      {
+        "content": "`.custom-file` and `.form-control-file` have been replaced by custom styles on top of `.form-control`.",
+        "priority": 0,
+        "status": "Not Started",
+        "notes": ""
+      },
+      {
+        "content": "`.custom-range` is now `.form-range`.",
+        "priority": 0,
+        "status": "Not Started",
+        "notes": ""
+      },
+      {
+        "content": "Dropped native `.form-control-file` and `.form-control-range`.",
+        "priority": 0,
+        "status": "Not Started",
+        "notes": ""
+      },
+      {
+        "content": "Dropped `.input-group-append` and `.input-group-prepend`. You can now just add buttons and `.input-group-text` as direct children of the input groups.",
+        "priority": 1,
+        "status": "Not Started",
+        "notes": ""
+      },
+      {
+        "content": "**Dropped form-specific layout classes for our grid system.** Use our grid and utilities instead of `.form-group`, `.form-row`, or `.form-inline`.",
+        "priority": 1,
+        "status": "Not Started",
+        "notes": ""
+      },
+      {
+        "content": "Form labels now require `.form-label`.",
+        "priority": 1,
+        "status": "Not Started",
+        "notes": ""
+      },
+      {
+        "content": "`.form-text` no longer sets `display`, allowing you to create inline or block help text as you wish just by changing the HTML element.",
+        "priority": 1,
+        "status": "Not Started",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "title": "Badges",
+    "content": "",
+    "tasks": [
+      {
+        "content": "Dropped all `.badge-*` color classes for background utilities (e.g., use `.bg-primary` instead of `.badge-primary`).",
+        "priority": 1,
+        "status": "Not Started",
+        "notes": ""
+      },
+      {
+        "content": "Dropped `.badge-pill`—use the `.rounded-pill` utility instead.",
+        "priority": 1,
+        "status": "Not Started",
+        "notes": ""
+      },
+      {
+        "content": "Removed hover and focus styles for `<a>` and `<button>` elements.",
+        "priority": 1,
+        "status": "Not Started",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "title": "Buttons",
+    "content": "",
+    "tasks": [
+      {
+        "content": "**[Toggle buttons]({{< docsref \"/forms/checks-radios#toggle-buttons\" >}}), with checkboxes or radios, no longer require JavaScript and have new markup.** We no longer require a wrapping element, add `.btn-check` to the `<input>`, and pair it with any `.btn` classes on the `<label>`. [See #30650](https://github.com/twbs/bootstrap/pull/30650). _The docs for this has moved from our Buttons page to the new Forms section._",
+        "priority": 1,
+        "status": "Not Started",
+        "notes": ""
+      },
+      {
+        "content": "**Dropped `.btn-block` for utilities.** Instead of using `.btn-block` on the `.btn`, wrap your buttons with `.d-grid` and a `.gap-*` utility to space them as needed. Switch to responsive classes for even more control over them. [Read the docs for some examples.]({{< docsref \"/components/buttons#block-buttons\" >}})",
+        "priority": 1,
+        "status": "Not Started",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "title": "Card",
+    "content": "",
+    "tasks": [
+      {
+        "content": "Dropped `.card-deck` in favor of our grid. Wrap your cards in column classes and add a parent `.row-cols-*` container to recreate card decks (but with more control over responsive alignment).",
+        "priority": 1,
+        "status": "Not Started",
+        "notes": ""
+      },
+      {
+        "content": "Dropped `.card-columns` in favor of Masonry. [See #28922](https://github.com/twbs/bootstrap/pull/28922).",
+        "priority": 1,
+        "status": "Not Started",
+        "notes": ""
+      },
+      {
+        "content": "Replaced the `.card` based accordion with a [new Accordion component]({{< docsref \"/components/accordion\" >}}).",
+        "priority": 1,
+        "status": "Not Started",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "title": "Close button",
+    "content": "",
+    "tasks": [
+      {
+        "content": "Renamed `.close` to `.btn-close` for a less generic name.",
+        "priority": 1,
+        "status": "Not Started",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "title": "Dropdowns",
+    "content": "",
+    "tasks": [
+      {
+        "content": "All the events for the dropdown are now triggered on the dropdown toggle button and then bubbled up to the parent element.",
+        "priority": 1,
+        "status": "Not Started",
+        "notes": ""
+      },
+      {
+        "content": "Dropped `flip` option for dropdown plugin in favor of native Popper configuration. You can now disable the flipping behavior by passing an empty array for [`fallbackPlacements`](https://popper.js.org/docs/v2/modifiers/flip/#fallbackplacements) option in [flip](https://popper.js.org/docs/v2/modifiers/flip/) modifier.",
+        "priority": 1,
+        "status": "Not Started",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "title": "Jumbotron",
+    "content": "",
+    "tasks": [
+      {
+        "content": "Dropped the jumbotron component as it can be replicated with utilities. [See our new Jumbotron example for a demo.]({{< docsref \"/examples/jumbotron\" >}})",
+        "priority": 1,
+        "status": "Not Started",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "title": "Navbars",
+    "content": "",
+    "tasks": [
+      {
+        "content": "Navbars now require a container within (to drastically simplify spacing requirements and CSS required).",
+        "priority": 1,
+        "status": "Not Started",
+        "notes": ""
+      },
+      {
+        "content": "The `.active` class can no longer be applied to `.nav-item`s, it must be applied directly on `.nav-link`s.",
+        "priority": 1,
+        "status": "Not Started",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "title": "Popovers",
+    "content": "",
+    "tasks": [
+      {
+        "content": "Renamed `.arrow` to `.popover-arrow` in our default popover template.",
+        "priority": 1,
+        "status": "Not Started",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "title": "Tooltips",
+    "content": "",
+    "tasks": [
+      {
+        "content": "Renamed `.arrow` to `.tooltip-arrow` in our default tooltip template.",
+        "priority": 1,
+        "status": "Not Started",
+        "notes": ""
+      },
+      {
+        "content": "The default value for the `fallbackPlacements` is changed to `['top', 'right', 'bottom', 'left']` for better placement of popper elements.",
+        "priority": 1,
+        "status": "Not Started",
+        "notes": ""
+      },
+      {
+        "content": "Renamed `whiteList` option to `allowList`.",
+        "priority": 1,
+        "status": "Not Started",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "title": "Utilities",
+    "content": "",
+    "tasks": [
+      {
+        "content": "Renamed several utilities to use logical property names instead of directional names with the addition of RTL support:",
+        "priority": 1,
+        "status": "Not Started",
+        "notes": ""
+      },
+      {
+        "content": "Renamed `.float-left` and `.float-right` to `.float-start` and `.float-end`.",
+        "priority": 0,
+        "status": "Not Started",
+        "notes": ""
+      },
+      {
+        "content": "Renamed `.border-left` and `.border-right` to `.border-start` and `.border-end`.",
+        "priority": 0,
+        "status": "Not Started",
+        "notes": ""
+      },
+      {
+        "content": "Renamed `.rounded-left` and `.rounded-right` to `.rounded-start` and `.rounded-end`.",
+        "priority": 0,
+        "status": "Not Started",
+        "notes": ""
+      },
+      {
+        "content": "Renamed `.ml-*` and `.mr-*` to `.ms-*` and `.me-*`.",
+        "priority": 0,
+        "status": "Not Started",
+        "notes": ""
+      },
+      {
+        "content": "Renamed `.pl-*` and `.pr-*` to `.ps-*` and `.pe-*`.",
+        "priority": 0,
+        "status": "Not Started",
+        "notes": ""
+      },
+      {
+        "content": "Renamed `.text-*-left` and `.text-*-right` to `.text-*-start` and `.text-*-end`.",
+        "priority": 0,
+        "status": "Not Started",
+        "notes": ""
+      },
+      {
+        "content": "Disabled negative margins by default.",
+        "priority": 1,
+        "status": "Not Started",
+        "notes": ""
+      },
+      {
+        "content": "Renamed `.text-monospace` to `.font-monospace`.",
+        "priority": 1,
+        "status": "Not Started",
+        "notes": ""
+      },
+      {
+        "content": "Removed `.text-hide` as it's an antiquated method for hiding text that shouldn't be used anymore.",
+        "priority": 1,
+        "status": "Not Started",
+        "notes": ""
+      },
+      {
+        "content": "Renamed `.font-weight-*` utilities as `.fw-*` for brevity and consistency.",
+        "priority": 1,
+        "status": "Not Started",
+        "notes": ""
+      },
+      {
+        "content": "Renamed `.font-italic` utility to `.fst-italic` for brevity and consistency with new `.fst-normal` utility.",
+        "priority": 1,
+        "status": "Not Started",
+        "notes": ""
+      },
+      {
+        "content": "Removed `.rounded-sm` and `rounded-lg`, and introduced a new scale of classes, `.rounded-0` to `.rounded-3`. [See #31687](https://github.com/twbs/bootstrap/pull/31687).",
+        "priority": 1,
+        "status": "Not Started",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "title": "Helpers",
+    "content": "",
+    "tasks": [
+      {
+        "content": "**Responsive embed helpers have been renamed to [ratio helpers]({{< docsref \"/helpers/ratio\" >}})** with new class names and improved behaviors, as well as a helpful CSS variable.",
+        "priority": 1,
+        "status": "Not Started",
+        "notes": ""
+      },
+      {
+        "content": "Classes have been renamed to change `by` to `x` in the aspect ratio. For example, `.ratio-16by9` is now `.ratio-16x9`.",
+        "priority": 0,
+        "status": "Not Started",
+        "notes": ""
+      },
+      {
+        "content": "We've dropped the `.embed-responsive-item` and element group selector in favor of a simpler `.ratio > *` selector. No more class is needed, and the ratio helper now works with any HTML element.",
+        "priority": 0,
+        "status": "Not Started",
+        "notes": ""
+      },
+      {
+        "content": "The `$embed-responsive-aspect-ratios` Sass map has been renamed to `$aspect-ratios` and its values have been simplified to include the class name and the percentage as the `key: value` pair.",
+        "priority": 0,
+        "status": "Not Started",
+        "notes": ""
+      },
+      {
+        "content": "CSS variables are now generated and included for each value in the Sass map. Modify the `--bs-aspect-ratio` variable on the `.ratio` to create any [custom aspect ratio]({{< docsref \"/helpers/ratio#custom-ratios\" >}}).",
+        "priority": 0,
+        "status": "Not Started",
+        "notes": ""
+      },
+      {
+        "content": "**\"Screen reader\" classes are now [\"visually hidden\" classes]({{< docsref \"/helpers/visually-hidden\" >}}).**",
+        "priority": 1,
+        "status": "Not Started",
+        "notes": ""
+      },
+      {
+        "content": "Changed the Sass file from `scss/helpers/_screenreaders.scss` to `scss/helpers/_visually-hidden.scss`",
+        "priority": 0,
+        "status": "Not Started",
+        "notes": ""
+      },
+      {
+        "content": "Renamed `.sr-only` and `.sr-only-focusable` to `.visually-hidden` and `.visually-hidden-focusable`",
+        "priority": 0,
+        "status": "Not Started",
+        "notes": ""
+      },
+      {
+        "content": "Renamed `sr-only()` and `sr-only-focusable()` mixins to `visually-hidden()` and `visually-hidden-focusable()`.",
+        "priority": 0,
+        "status": "Not Started",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "title": "JavaScript",
+    "content": "",
+    "tasks": [
+      {
+        "content": "Data attributes for all JavaScript plugins are now namespaced to help distinguish Bootstrap functionality from third parties and your own code. For example, we use `data-bs-toggle` instead of `data-toggle`.",
+        "priority": 1,
+        "status": "Not Started",
+        "notes": ""
+      }
+    ]
+  }
+]

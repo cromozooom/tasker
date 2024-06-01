@@ -20,6 +20,8 @@
     ></script>
 
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
   </head>
   <body
     x-data="taskViewer()"
@@ -173,6 +175,28 @@
         <p>Loading tasks...</p>
       </template>
 
+      <div x-show="showStatistics" class="flex w-full py-8 container mx-auto">
+        <div class="flex flex-col grow w-full">
+          <div class="flex flex-col items-center">
+            <div class="w-full block h-64">
+              <canvas id="statusChart" width="200" height="200"></canvas>
+            </div>
+            <div class="py-2">
+              <small class="my-2">Task Status Distribution</small>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col grow w-full">
+          <div class="flex flex-col items-center">
+            <div class="w-full block h-64">
+              <canvas id="priorityChart" width="200" height="200"></canvas>
+            </div>
+            <div class="py-2">
+              <small class="my-2">Task Priority Distribution</small>
+            </div>
+          </div>
+        </div>
+      </div>
       <template x-if="loaded">
         <div class="h-full flex flex-col">
           <div
@@ -183,6 +207,26 @@
             </h1>
 
             <div class="flex items-center gap-3">
+              <button
+                type="button"
+                class="text-white flex items-center gap-3 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                @click="showStatistics = !showStatistics"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-pie-chart-fill"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M15.985 8.5H8.207l-5.5 5.5a8 8 0 0 0 13.277-5.5zM2 13.292A8 8 0 0 1 7.5.015v7.778zM8.5.015V7.5h7.485A8 8 0 0 0 8.5.015"
+                  />
+                </svg>
+
+                Charts
+              </button>
               <button
                 x-show="!showIntro"
                 type="button"
@@ -252,42 +296,6 @@
             <div>
               <label
                 class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
-                >Priority</label
-              >
-              <div class="flex flex-wrap">
-                <template
-                  x-for="(priority, index) in uniquePriorities"
-                  :key="priority"
-                >
-                  <div>
-                    <input
-                      type="checkbox"
-                      :value="priority"
-                      @change="toggleFilter(filterPriority, priority)"
-                      class="hidden"
-                      :id="'priority-' + priority"
-                    />
-                    <label
-                      :for="'priority-' + priority"
-                      :class="{
-                        'bg-blue-600 text-white': filterPriority.includes(priority),
-                        'bg-gray-200 text-gray-800': !filterPriority.includes(priority),
-                        'rounded-l-lg': index === 0,
-                        'rounded-r-lg': index === uniquePriorities.length - 1
-                      }"
-                      class="px-3 py-2 cursor-pointer transition-colors duration-300 border border-gray-300"
-                    >
-                      <span
-                        x-text="`${priority} (${filteredPriorityCounts[priority] || 0})`"
-                      ></span>
-                    </label>
-                  </div>
-                </template>
-              </div>
-            </div>
-            <div>
-              <label
-                class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
                 >Status</label
               >
               <div class="flex flex-wrap">
@@ -315,6 +323,42 @@
                     >
                       <span
                         x-text="`${status} (${filteredStatusCounts[status] || 0})`"
+                      ></span>
+                    </label>
+                  </div>
+                </template>
+              </div>
+            </div>
+            <div>
+              <label
+                class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                >Priority</label
+              >
+              <div class="flex flex-wrap">
+                <template
+                  x-for="(priority, index) in uniquePriorities"
+                  :key="priority"
+                >
+                  <div>
+                    <input
+                      type="checkbox"
+                      :value="priority"
+                      @change="toggleFilter(filterPriority, priority)"
+                      class="hidden"
+                      :id="'priority-' + priority"
+                    />
+                    <label
+                      :for="'priority-' + priority"
+                      :class="{
+                        'bg-blue-600 text-white': filterPriority.includes(priority),
+                        'bg-gray-200 text-gray-800': !filterPriority.includes(priority),
+                        'rounded-l-lg': index === 0,
+                        'rounded-r-lg': index === uniquePriorities.length - 1
+                      }"
+                      class="px-3 py-2 cursor-pointer transition-colors duration-300 border border-gray-300"
+                    >
+                      <span
+                        x-text="`${priority} (${filteredPriorityCounts[priority] || 0})`"
                       ></span>
                     </label>
                   </div>
@@ -408,10 +452,14 @@
                               class="flex justify-center items-center rounded-full text-center px-2"
                               x-text="task.priority"
                             ></span>
-                            <span
-                              class="dark:text-white flex justify-center items-center text-center pr-2"
-                              x-text="task.status"
-                            ></span>
+                            <button
+                              x-on:click="cycleTaskStatus(sectionIndex, taskIndex)"
+                            >
+                              <span
+                                class="dark:text-white flex justify-center items-center text-center pr-2"
+                                x-text="task.status"
+                              ></span>
+                            </button>
                           </div>
                         </div>
 
@@ -479,6 +527,8 @@
           filteredSections: [],
           filterStatus: [],
           filterPriority: [],
+          priorityCounts: {},
+          statusCounts: {},
           loaded: false,
           error: "",
           activeEditor: null,
@@ -487,6 +537,7 @@
           editTaskIndex: null,
           modalTask: {},
           showIntro: false,
+          showStatistics: false,
 
           uniquePriorities: [],
           uniqueStatuses: [],
@@ -500,13 +551,34 @@
             const storedData = localStorage.getItem("tasks");
             if (storedData) {
               this.sections = JSON.parse(storedData);
+
               this.calculateUniqueValues();
               this.filterTasks();
               this.loaded = true;
+              this.updatePriorityChart();
+              this.updateStatusChart();
             } else {
               this.showIntro = true;
               this.loaded = true;
             }
+          },
+
+          cycleTaskStatus(sectionIndex, taskIndex) {
+            const statuses = [
+              "Not Started",
+              "In Progress",
+              "Block",
+              "Completed",
+            ];
+            let currentStatus =
+              this.sections[sectionIndex].tasks[taskIndex].status;
+            let currentIndex = statuses.indexOf(currentStatus);
+            let nextIndex = (currentIndex + 1) % statuses.length;
+            this.sections[sectionIndex].tasks[taskIndex].status =
+              statuses[nextIndex];
+            this.saveToLocalStorage();
+            this.filterTasks();
+            this.updatePriorityChart();
           },
 
           addDragOverClass() {
@@ -569,6 +641,8 @@
               this.calculateUniqueValues();
               this.saveToLocalStorage();
               this.filterTasks();
+              this.updatePriorityChart();
+              this.updateStatusChart();
               this.loaded = true;
               alert("Tasks loaded successfully from Markdown!");
             };
@@ -584,6 +658,10 @@
                 this.calculateUniqueValues();
                 this.saveToLocalStorage();
                 this.filterTasks();
+                this.saveToLocalStorage();
+
+                this.updatePriorityChart();
+                this.updateStatusChart();
                 this.loaded = true;
                 alert("Tasks loaded successfully from JSON!");
               } catch (error) {
@@ -778,6 +856,8 @@
             }
             console.log(this.sections);
             this.calculateUniqueValues();
+            this.updatePriorityChart();
+            this.updateStatusChart();
             this.filterTasks();
           },
 
@@ -827,6 +907,107 @@
               document.documentElement.classList.add("dark");
             } else {
               document.documentElement.classList.remove("dark");
+            }
+          },
+
+          updateFilters() {
+            this.calculatePriorityCounts();
+            this.calculateStatusCounts();
+          },
+
+          updateStatusChart() {
+            const labels = Object.keys(this.statusCounts);
+            const data = Object.values(this.statusCounts);
+
+            if (!this.statusChart) {
+              const ctx = document
+                .getElementById("statusChart")
+                .getContext("2d");
+              this.statusChart = new Chart(ctx, {
+                type: "pie",
+                data: {
+                  labels: labels,
+                  datasets: [
+                    {
+                      data: data,
+                      backgroundColor: [
+                        "rgb(255, 99, 132)",
+                        "rgb(54, 162, 235)",
+                        "rgb(255, 205, 86)",
+                        "rgb(75, 192, 192)",
+                        "rgb(153, 102, 255)",
+                        "rgb(255, 159, 64)",
+                      ],
+                    },
+                  ],
+                },
+                options: {
+                  responsive: true,
+                  maintainAspectRatio: false,
+                  plugins: {
+                    tooltip: {
+                      callbacks: {
+                        label: function (context) {
+                          const label = context.label || "";
+                          const value = context.raw || 0;
+                          return `${label}: ${value}`;
+                        },
+                      },
+                    },
+                  },
+                },
+              });
+            } else {
+              this.statusChart.data.labels = labels;
+              this.statusChart.data.datasets[0].data = data;
+              this.statusChart.update();
+            }
+          },
+          updatePriorityChart() {
+            const labels = Object.keys(this.priorityCounts);
+            const data = Object.values(this.priorityCounts);
+            if (!this.priorityChart) {
+              const ctx = document
+                .getElementById("priorityChart")
+                .getContext("2d");
+              this.priorityChart = new Chart(ctx, {
+                type: "pie",
+                data: {
+                  labels: labels,
+                  datasets: [
+                    {
+                      data: data,
+                      backgroundColor: [
+                        "rgb(255, 99, 132)",
+                        "rgb(54, 162, 235)",
+                        "rgb(255, 205, 86)",
+                        "rgb(75, 192, 192)",
+                        "rgb(153, 102, 255)",
+                        "rgb(255, 159, 64)",
+                      ],
+                    },
+                  ],
+                },
+                options: {
+                  responsive: true,
+                  maintainAspectRatio: false,
+                  plugins: {
+                    tooltip: {
+                      callbacks: {
+                        label: function (context) {
+                          const label = context.label || "";
+                          const value = context.raw || 0;
+                          return `${label}: ${value}`;
+                        },
+                      },
+                    },
+                  },
+                },
+              });
+            } else {
+              this.priorityChart.data.labels = labels;
+              this.priorityChart.data.datasets[0].data = data;
+              this.priorityChart.update();
             }
           },
         };

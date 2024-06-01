@@ -114,19 +114,19 @@
       {
         "content": "`visibility()`",
         "priority": 0,
-        "status": "Not Started",
+        "status": "Completed",
         "notes": ""
       },
       {
         "content": "`form-control-focus()`",
         "priority": 0,
-        "status": "Not Started",
+        "status": "Completed",
         "notes": ""
       },
       {
         "content": "Renamed `scale-color()` function to `shift-color()` to avoid collision with Sass's own color scaling function.",
         "priority": 1,
-        "status": "Not Started",
+        "status": "Completed",
         "notes": ""
       }
     ]
@@ -138,25 +138,25 @@
       {
         "content": "Renamed `.no-gutters` to `.g-0` to match new gutter utilities.",
         "priority": 1,
-        "status": "Not Started",
+        "status": "Completed",
         "notes": ""
       },
       {
         "content": "Dropped several `.order-*` classes that often went unused. We now only provide `.order-1` to `.order-5` out of the box.",
         "priority": 1,
-        "status": "Not Started",
+        "status": "Completed",
         "notes": ""
       },
       {
         "content": "Dropped the `.media` component as it can be easily replicated with utilities. [See #28265](https://github.com/twbs/bootstrap/pull/28265) and the [flex utilities page for an example]({{< docsref \"/utilities/flex#media-object\" >}}).",
         "priority": 1,
-        "status": "Not Started",
+        "status": "Completed",
         "notes": ""
       },
       {
         "content": "`bootstrap-grid.css` now only applies `box-sizing: border-box` to the column instead of resetting the global box-sizing. This way, our grid styles can be used in more places without interference.",
         "priority": 1,
-        "status": "Not Started",
+        "status": "Block",
         "notes": ""
       }
     ]
@@ -168,49 +168,49 @@
       {
         "content": "Overhauled our display typography to replace our `$display-*` variables and with a `$display-font-sizes` Sass map. Also removed the individual `$display-*-weight` variables for a single `$display-font-weight` and adjusted `font-size`s.",
         "priority": 1,
-        "status": "Not Started",
+        "status": "Completed",
         "notes": ""
       },
       {
         "content": "Nested tables do not inherit styles anymore.",
         "priority": 1,
-        "status": "Not Started",
+        "status": "Block",
         "notes": ""
       },
       {
         "content": "`.thead-light` and `.thead-dark` are dropped in favor of the `.table-*` variant classes which can be used for all table elements (`thead`, `tbody`, `tfoot`, `tr`, `th` and `td`).",
         "priority": 1,
-        "status": "Not Started",
+        "status": "Completed",
         "notes": ""
       },
       {
         "content": "The `table-row-variant()` mixin is renamed to `table-variant()` and accepts only 2 parameters: `$color` (color name) and `$value` (color code). The border color and accent colors are automatically calculated based on the table factor variables.",
         "priority": 1,
-        "status": "Not Started",
+        "status": "Completed",
         "notes": ""
       },
       {
         "content": "Dropped `.pre-scrollable` class. [See #29135](https://github.com/twbs/bootstrap/pull/29135)",
         "priority": 1,
-        "status": "Not Started",
+        "status": "Completed",
         "notes": ""
       },
       {
         "content": "`.text-*` utilities do not add hover and focus states to links anymore. `.link-*` helper classes can be used instead. [See #29267](https://github.com/twbs/bootstrap/pull/29267)",
         "priority": 1,
-        "status": "Not Started",
+        "status": "Completed",
         "notes": ""
       },
       {
         "content": "Dropped `.text-justify` class. [See #29793](https://github.com/twbs/bootstrap/pull/29793)",
         "priority": 1,
-        "status": "Not Started",
+        "status": "Completed",
         "notes": ""
       },
       {
         "content": "~~`<hr>` elements now use `height` instead of `border` to better support the `size` attribute. This also enables use of padding utilities to create thicker dividers (e.g., `<hr class=\"py-1\">`).~~",
         "priority": 1,
-        "status": "Not Started",
+        "status": "Completed",
         "notes": ""
       }
     ]
@@ -222,73 +222,73 @@
       {
         "content": "**Consolidated native and custom form elements.** Checkboxes, radios, selects, and other inputs that had native and custom classes in v4 have been consolidated. Now nearly all our form elements are entirely custom, most without the need for custom HTML.",
         "priority": 1,
-        "status": "Not Started",
+        "status": "Completed",
         "notes": ""
       },
       {
         "content": "`.custom-control.custom-checkbox` is now `.form-check`.",
         "priority": 0,
-        "status": "Not Started",
+        "status": "Completed",
         "notes": ""
       },
       {
         "content": "`.custom-control.custom-radio` is now `.form-check`.",
         "priority": 0,
-        "status": "Not Started",
+        "status": "Completed",
         "notes": ""
       },
       {
         "content": "`.custom-control.custom-switch` is now `.form-check.form-switch`.",
         "priority": 0,
-        "status": "Not Started",
-        "notes": ""
+        "status": "Block",
+        "notes": "📣 doesn't seem to work only with find and replace"
       },
       {
         "content": "`.custom-select` is now `.form-select`.",
         "priority": 0,
-        "status": "Not Started",
+        "status": "Completed",
         "notes": ""
       },
       {
         "content": "`.custom-file` and `.form-control-file` have been replaced by custom styles on top of `.form-control`.",
         "priority": 0,
-        "status": "Not Started",
+        "status": "Completed",
         "notes": ""
       },
       {
         "content": "`.custom-range` is now `.form-range`.",
         "priority": 0,
-        "status": "Not Started",
+        "status": "Completed",
         "notes": ""
       },
       {
         "content": "Dropped native `.form-control-file` and `.form-control-range`.",
         "priority": 0,
-        "status": "Not Started",
+        "status": "Completed",
         "notes": ""
       },
       {
         "content": "Dropped `.input-group-append` and `.input-group-prepend`. You can now just add buttons and `.input-group-text` as direct children of the input groups.",
         "priority": 1,
-        "status": "Not Started",
+        "status": "Completed",
         "notes": ""
       },
       {
         "content": "**Dropped form-specific layout classes for our grid system.** Use our grid and utilities instead of `.form-group`, `.form-row`, or `.form-inline`.",
         "priority": 1,
-        "status": "Not Started",
-        "notes": ""
+        "status": "Completed",
+        "notes": "form-inlineB5 | form-groupB5 | form-rowB5"
       },
       {
         "content": "Form labels now require `.form-label`.",
         "priority": 1,
-        "status": "Not Started",
-        "notes": ""
+        "status": "Block",
+        "notes": "📣 we need to check latter on as the class is adding margin bottom"
       },
       {
         "content": "`.form-text` no longer sets `display`, allowing you to create inline or block help text as you wish just by changing the HTML element.",
         "priority": 1,
-        "status": "Not Started",
+        "status": "Completed",
         "notes": ""
       }
     ]
@@ -300,20 +300,20 @@
       {
         "content": "Dropped all `.badge-*` color classes for background utilities (e.g., use `.bg-primary` instead of `.badge-primary`).",
         "priority": 1,
-        "status": "Not Started",
+        "status": "Completed",
         "notes": ""
       },
       {
         "content": "Dropped `.badge-pill`—use the `.rounded-pill` utility instead.",
         "priority": 1,
-        "status": "Not Started",
+        "status": "Completed",
         "notes": ""
       },
       {
         "content": "Removed hover and focus styles for `<a>` and `<button>` elements.",
         "priority": 1,
-        "status": "Not Started",
-        "notes": ""
+        "status": "Block",
+        "notes": "📣 wee need to check one by one where the case"
       }
     ]
   },
@@ -324,13 +324,13 @@
       {
         "content": "**[Toggle buttons]({{< docsref \"/forms/checks-radios#toggle-buttons\" >}}), with checkboxes or radios, no longer require JavaScript and have new markup.** We no longer require a wrapping element, add `.btn-check` to the `<input>`, and pair it with any `.btn` classes on the `<label>`. [See #30650](https://github.com/twbs/bootstrap/pull/30650). _The docs for this has moved from our Buttons page to the new Forms section._",
         "priority": 1,
-        "status": "Not Started",
+        "status": "Completed",
         "notes": ""
       },
       {
         "content": "**Dropped `.btn-block` for utilities.** Instead of using `.btn-block` on the `.btn`, wrap your buttons with `.d-grid` and a `.gap-*` utility to space them as needed. Switch to responsive classes for even more control over them. [Read the docs for some examples.]({{< docsref \"/components/buttons#block-buttons\" >}})",
         "priority": 1,
-        "status": "Not Started",
+        "status": "Completed",
         "notes": ""
       }
     ]
@@ -342,20 +342,20 @@
       {
         "content": "Dropped `.card-deck` in favor of our grid. Wrap your cards in column classes and add a parent `.row-cols-*` container to recreate card decks (but with more control over responsive alignment).",
         "priority": 1,
-        "status": "Not Started",
+        "status": "Completed",
         "notes": ""
       },
       {
         "content": "Dropped `.card-columns` in favor of Masonry. [See #28922](https://github.com/twbs/bootstrap/pull/28922).",
         "priority": 1,
-        "status": "Not Started",
+        "status": "Completed",
         "notes": ""
       },
       {
         "content": "Replaced the `.card` based accordion with a [new Accordion component]({{< docsref \"/components/accordion\" >}}).",
         "priority": 1,
-        "status": "Not Started",
-        "notes": ""
+        "status": "Block",
+        "notes": "to be done latter as I need to disable bootstrap js"
       }
     ]
   },
@@ -366,7 +366,7 @@
       {
         "content": "Renamed `.close` to `.btn-close` for a less generic name.",
         "priority": 1,
-        "status": "Not Started",
+        "status": "Completed",
         "notes": ""
       }
     ]
@@ -378,14 +378,14 @@
       {
         "content": "All the events for the dropdown are now triggered on the dropdown toggle button and then bubbled up to the parent element.",
         "priority": 1,
-        "status": "Not Started",
-        "notes": ""
+        "status": "Block",
+        "notes": "📣 wee need to check one by one where the case"
       },
       {
         "content": "Dropped `flip` option for dropdown plugin in favor of native Popper configuration. You can now disable the flipping behavior by passing an empty array for [`fallbackPlacements`](https://popper.js.org/docs/v2/modifiers/flip/#fallbackplacements) option in [flip](https://popper.js.org/docs/v2/modifiers/flip/) modifier.",
         "priority": 1,
-        "status": "Not Started",
-        "notes": ""
+        "status": "Block",
+        "notes": "📣 wee need to check one by one where the case"
       }
     ]
   },
@@ -396,7 +396,7 @@
       {
         "content": "Dropped the jumbotron component as it can be replicated with utilities. [See our new Jumbotron example for a demo.]({{< docsref \"/examples/jumbotron\" >}})",
         "priority": 1,
-        "status": "Not Started",
+        "status": "Completed",
         "notes": ""
       }
     ]
@@ -408,13 +408,13 @@
       {
         "content": "Navbars now require a container within (to drastically simplify spacing requirements and CSS required).",
         "priority": 1,
-        "status": "Not Started",
+        "status": "Completed",
         "notes": ""
       },
       {
         "content": "The `.active` class can no longer be applied to `.nav-item`s, it must be applied directly on `.nav-link`s.",
         "priority": 1,
-        "status": "Not Started",
+        "status": "Completed",
         "notes": ""
       }
     ]
@@ -426,7 +426,7 @@
       {
         "content": "Renamed `.arrow` to `.popover-arrow` in our default popover template.",
         "priority": 1,
-        "status": "Not Started",
+        "status": "Completed",
         "notes": ""
       }
     ]
@@ -438,20 +438,20 @@
       {
         "content": "Renamed `.arrow` to `.tooltip-arrow` in our default tooltip template.",
         "priority": 1,
-        "status": "Not Started",
+        "status": "Completed",
         "notes": ""
       },
       {
         "content": "The default value for the `fallbackPlacements` is changed to `['top', 'right', 'bottom', 'left']` for better placement of popper elements.",
         "priority": 1,
-        "status": "Not Started",
-        "notes": ""
+        "status": "Block",
+        "notes": "it doesn't work currently we should use ngx-bootstrap"
       },
       {
         "content": "Renamed `whiteList` option to `allowList`.",
         "priority": 1,
-        "status": "Not Started",
-        "notes": ""
+        "status": "Block",
+        "notes": "it doesn't work currently we should use ngx-bootstrap"
       }
     ]
   },
@@ -462,49 +462,49 @@
       {
         "content": "Renamed several utilities to use logical property names instead of directional names with the addition of RTL support:",
         "priority": 1,
-        "status": "Not Started",
+        "status": "Completed",
         "notes": ""
       },
       {
         "content": "Renamed `.float-left` and `.float-right` to `.float-start` and `.float-end`.",
         "priority": 0,
-        "status": "Not Started",
+        "status": "Completed",
         "notes": ""
       },
       {
         "content": "Renamed `.border-left` and `.border-right` to `.border-start` and `.border-end`.",
         "priority": 0,
-        "status": "Not Started",
+        "status": "Completed",
         "notes": ""
       },
       {
         "content": "Renamed `.rounded-left` and `.rounded-right` to `.rounded-start` and `.rounded-end`.",
         "priority": 0,
-        "status": "Not Started",
+        "status": "Completed",
         "notes": ""
       },
       {
         "content": "Renamed `.ml-*` and `.mr-*` to `.ms-*` and `.me-*`.",
         "priority": 0,
-        "status": "Not Started",
+        "status": "Completed",
         "notes": ""
       },
       {
         "content": "Renamed `.pl-*` and `.pr-*` to `.ps-*` and `.pe-*`.",
         "priority": 0,
-        "status": "Not Started",
+        "status": "Completed",
         "notes": ""
       },
       {
         "content": "Renamed `.text-*-left` and `.text-*-right` to `.text-*-start` and `.text-*-end`.",
         "priority": 0,
-        "status": "Not Started",
+        "status": "Completed",
         "notes": ""
       },
       {
         "content": "Disabled negative margins by default.",
         "priority": 1,
-        "status": "Not Started",
+        "status": "Completed",
         "notes": ""
       },
       {
